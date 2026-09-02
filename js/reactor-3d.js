@@ -22,8 +22,8 @@
   var COMPONENTS_BY_ID = {};
   COMPONENTS.forEach(function (c) { COMPONENTS_BY_ID[c.id] = c; });
 
-  /* ---- Fallback if Three.js failed to load from CDN ---- */
-  if (typeof THREE === "undefined") {
+  /* ---- Fallback if Three.js or OrbitControls failed to load from CDN ---- */
+  if (typeof THREE === "undefined" || typeof THREE.OrbitControls !== "function") {
     if (loadingEl) loadingEl.hidden = true;
     if (fallbackEl) fallbackEl.hidden = false;
     if (canvas) canvas.hidden = true;
