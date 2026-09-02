@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم | تحليل الحساسية وعدم اليقين — SMART100 × رأس الخير</title>
+<meta name="description" content="لوحة تحكم تفاعلية: شغّل سيناريوهات النموذج، استعرض النتائج بثلاث طرق (هندسية، قرار، بحثية)، وافحص تحليل الحساسية Tornado ومحاكاة مونت كارلو لعدم اليقين في تكلفة إنتاج المياه.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html" aria-current="page">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html">MSF</a></li>
+      <li><a href="ro.html">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html">التكامل</a></li>
+      <li><a href="performance.html">الأداء</a></li>
+      <li><a href="safety.html">الأمان</a></li>
+      <li><a href="glossary.html">المسرد</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="integration.html" class="nav-cta">استكشف التكامل التقني</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">الرئيسية</a> ← لوحة التحكم</p>
+    <span class="eyebrow">Interactive Dashboard · Sensitivity &amp; Scenarios</span>
+    <h1>لوحة التحكم: <span class="accent-water">شغّل</span> النموذج بنفسك</h1>
+    <p class="lead">
+      نفس محرك الحساب (LCOW) المستخدم في بقية هذا الموقع، بواجهة تفاعلية: جرّب سيناريوهات
+      مختلفة، بدّل طريقة العرض حسب اهتمامك، وافحص مدى حساسية النتائج للافتراضات وعدم اليقين
+      فيها.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <div class="container" style="padding-top:40px;">
+    <div class="ev-legend" role="list" aria-label="دليل مصادر البيانات">
+      <span class="ev-legend-label">مصدر البيانات:</span>
+      <span class="ev-legend-item is-official" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> رسمي</span>
+      <span class="ev-legend-item is-peer-reviewed" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محكّم علمياً</span>
+      <span class="ev-legend-item is-calculated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محسوب</span>
+      <span class="ev-legend-item is-estimated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> تقديري هندسي</span>
+      <span class="ev-legend-item is-user-input" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> إدخال المستخدم</span>
+    </div>
+  </div>
+
+  <!-- ============ RESEARCH QUESTION BANNER ============ -->
+  <section class="section" id="research-question" aria-labelledby="rq-heading-ar">
+    <div class="container">
+      <div class="dash-question-card reveal">
+        <span class="dash-question-tag">Research Question</span>
+        <p class="dash-question-en" lang="en" dir="ltr">
+          Can an SMR-integrated desalination system provide reliable water production with
+          lower energy consumption and carbon emissions than conventional desalination
+          pathways?
+        </p>
+        <p class="dash-question-ar" id="rq-heading-ar">
+          هل يمكن لنظام تحلية متكامل مع مفاعل نووي معياري صغير (SMR) أن يوفّر إنتاجاً مائياً
+          موثوقاً باستهلاك طاقة وانبعاثات كربونية أقل من مسارات التحلية التقليدية؟
+        </p>
+        <p class="dash-question-note">
+          الإجابة تُحسب من السيناريو والافتراضات المختارة أدناه — وليست محددة مسبقاً.<br>
+          <span lang="en" dir="ltr">The answer is calculated from the selected scenario and assumptions — not predetermined.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RUN SCENARIO BUILDER ============ -->
+  <section class="section section-alt" id="scenario-builder" aria-labelledby="sb-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Run Scenario</span>
+        <h2 id="sb-heading">جرّب سيناريو بنفسك</h2>
+        <p>اختر تقنية التحلية المفترضة لكامل إنتاج المحطة، ثم شغّل النموذج لترى أثرها على التكلفة وعدد الوحدات والطاقة النوعية.</p>
+      </div>
+
+      <div class="dash-scenario-builder reveal">
+        <div class="dash-scenario-controls">
+          <label for="tech-select">تقنية التحلية</label>
+          <select id="tech-select" class="dash-select">
+            <option value="ro">RO — تناضح عكسي بالكامل</option>
+            <option value="msf">MSF — تقطير حراري بالكامل</option>
+            <option value="hybrid" selected>هجين (70.2% MSF / 29.8% RO) — الوضع الحالي</option>
+          </select>
+          <button type="button" id="run-scenario-btn" class="btn btn-primary">▶ تشغيل</button>
+        </div>
+
+        <div class="dash-scenario-results" id="scenario-results" aria-live="polite">
+          <p class="dash-scenario-placeholder">اضغط «تشغيل» لعرض نتائج المزيج المختار.</p>
+        </div>
+      </div>
+
+      <p class="model-note center">
+        نسخة مبسّطة بمفاعل SMART100 واحد فقط، لأن هذا الموقع التجريبي لا يضم بيانات مفاعل ثانٍ
+        للمقارنة — عدد الوحدات المعروض دائماً هو عدد وحدات SMART100 اللازمة، لا مفاعل بديل.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ THREE DASHBOARD MODES ============ -->
+  <section class="section" id="modes" aria-labelledby="modes-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Dashboard Modes</span>
+        <h2 id="modes-heading">ثلاث طرق لقراءة النتائج</h2>
+        <p>نفس النموذج والأرقام، بثلاثة عروض مختلفة حسب ما يهمك.</p>
+      </div>
+
+      <div class="scenarios-tabs">
+        <div class="tablist" role="tablist" aria-label="أوضاع لوحة التحكم" id="mode-tablist">
+          <button type="button" role="tab" id="tab-eng" aria-selected="true" aria-controls="panel-eng" tabindex="0" class="tab is-active">
+            <span class="tab-index">1</span> ⚙️ Engineering Mode
+          </button>
+          <button type="button" role="tab" id="tab-dm" aria-selected="false" aria-controls="panel-dm" tabindex="-1" class="tab">
+            <span class="tab-index">2</span> 📋 Decision Maker Mode
+          </button>
+          <button type="button" role="tab" id="tab-research" aria-selected="false" aria-controls="panel-research" tabindex="-1" class="tab">
+            <span class="tab-index">3</span> 🔬 Research Mode
+          </button>
+        </div>
+
+        <div class="tabpanels">
+
+          <!-- ---- Engineering Mode ---- -->
+          <div role="tabpanel" id="panel-eng" aria-labelledby="tab-eng" class="tabpanel" tabindex="0">
+            <div class="dash-stat-grid">
+              <div class="dash-stat-card dash-tone-nuclear">
+                <span class="dash-stat-num">100 MWe</span>
+                <span class="dash-stat-label">قدرة المفاعل لكل وحدة SMART100</span>
+              </div>
+              <div class="dash-stat-card dash-tone-thermal">
+                <span class="dash-stat-num">330 MWth</span>
+                <span class="dash-stat-label">القدرة الحرارية لكل وحدة</span>
+              </div>
+              <div class="dash-stat-card dash-tone-nuclear">
+                <span class="dash-stat-num">142.4 MWe</span>
+                <span class="dash-stat-label">الحمل الكهربائي الفعلي — السيناريو العادي</span>
+              </div>
+              <div class="dash-stat-card dash-tone-water">
+                <span class="dash-stat-num">1,036,000</span>
+                <span class="dash-stat-label">التدفق المائي (م³/يوم)</span>
+              </div>
+              <div class="dash-stat-card dash-tone-green">
+                <span class="dash-stat-num">47.95</span>
+                <span class="dash-stat-label">الطاقة النوعية المُدمَجة (kWh-eq/م³)</span>
+              </div>
+            </div>
+            <p class="model-note">
+              ⚠️ درجة حرارة وضغط مخرج المفاعل غير منشورَين رسمياً لتصميم SMART100 (على عكس بعض
+              المفاعلات الأخرى ذات التوثيق الأوسع) — لا يعرض هذا النموذج أرقاماً مُخترَعة لهما.
+            </p>
+          </div>
+
+          <!-- ---- Decision Maker Mode ---- -->
+          <div role="tabpanel" id="panel-dm" aria-labelledby="tab-dm" class="tabpanel" tabindex="0" hidden>
+            <div class="dash-stat-grid">
+              <div class="dash-stat-card dash-tone-water">
+                <span class="dash-stat-num">1,036,000</span>
+                <span class="dash-stat-label">إنتاج المياه (م³/يوم)</span>
+              </div>
+              <div class="dash-stat-card dash-tone-nuclear" id="dm-lcow-card">
+                <span class="dash-stat-num" id="dm-lcow-num">$5.588</span>
+                <span class="dash-stat-label">تكلفة الإنتاج LCOW — متوسط سنوي عبر السيناريوهات ($/م³)</span>
+              </div>
+              <div class="dash-stat-card dash-tone-green">
+                <span class="dash-stat-num">8.27M</span>
+                <span class="dash-stat-label">طن CO₂ موفّر سنوياً مقارنة بالغاز الطبيعي</span>
+              </div>
+              <div class="dash-stat-card dash-tone-thermal">
+                <span class="dash-stat-num">47.95</span>
+                <span class="dash-stat-label">استهلاك الطاقة (kWh-eq/م³)</span>
+              </div>
+            </div>
+
+            <div class="dash-reliability-note">
+              <h3>الموثوقية</h3>
+              <p>
+                9 من أصل 10 وحدات تكفي لتغطية 3 من أصل 4 سيناريوهات طلب مفترَضة؛ أما السيناريو
+                الرابع (ذروة الطلب) فيُغطّى عبر جدولة أعمال الصيانة في فصل الشتاء بدلاً من إضافة
+                وحدة حادية عشرة — وهي نتيجة مشروطة وليست ضمان تشغيل مطلق.
+              </p>
+            </div>
+
+            <div class="dash-ranking">
+              <h3>ترتيب السيناريوهات حسب التكلفة (من الأرخص للأغلى)</h3>
+              <ol class="dash-ranking-list" id="scenario-ranking-list">
+                <!-- populated by dashboard.js -->
+              </ol>
+            </div>
+          </div>
+
+          <!-- ---- Research Mode ---- -->
+          <div role="tabpanel" id="panel-research" aria-labelledby="tab-research" class="tabpanel" tabindex="0" hidden>
+            <div class="dash-research-grid">
+              <div class="dash-research-card" tabindex="0">
+                <span class="dash-research-icon">📐</span>
+                <h3>الافتراضات (Assumptions)</h3>
+                <p>معامل استغلال 92%، معدل خصم 7%، عمر مشروع 60 سنة، وأربعة سيناريوهات طلب/كهرباء ثابتة تحدد حجم الأسطول.</p>
+              </div>
+              <div class="dash-research-card" tabindex="0">
+                <span class="dash-research-icon">🧮</span>
+                <h3>المعادلات (Equations)</h3>
+                <p class="ff-mono" style="font-size:.8rem;line-height:1.7;">LCOW = (CRF×الوحدات×CAPEX + التشغيل السنوي) ÷ (الإنتاج السنوي)، حيث CRF = r(1+r)ⁿ ⁄ [(1+r)ⁿ−1]</p>
+              </div>
+              <div class="dash-research-card" tabindex="0">
+                <span class="dash-research-icon">🗄️</span>
+                <h3>بيانات الإدخال (Input Data)</h3>
+                <p>SMART100: 100 MWe (كفاءة 30.3%)، إنتاج المحطة 1,036,000 م³/يوم، تكلفة الكهرباء 75 $/MWh، CAPEX نسبي 1,000 لكل وحدة.</p>
+              </div>
+              <a href="references.html" class="dash-research-card">
+                <span class="dash-research-icon">🔗</span>
+                <h3>المصدر (Source)</h3>
+                <p>المصادر والمراجع الكاملة للبيانات المستخدمة في هذا النموذج.</p>
+              </a>
+              <a href="#uncertainty" class="dash-research-card">
+                <span class="dash-research-icon">🎲</span>
+                <h3>عدم اليقين (Uncertainty)</h3>
+                <p>محاكاة مونت كارلو بـ 1000 عيّنة لقياس نطاق عدم اليقين في التكلفة — انتقل للأسفل.</p>
+              </a>
+              <a href="#tornado" class="dash-research-card">
+                <span class="dash-research-icon">🌪️</span>
+                <h3>تحليل الحساسية (Sensitivity Analysis)</h3>
+                <p>تحليل Tornado لأكثر 8 متغيرات تأثيراً على التكلفة — انتقل للأسفل.</p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TORNADO SENSITIVITY CHART ============ -->
+  <section class="section section-alt" id="tornado" aria-labelledby="tornado-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sensitivity Analysis</span>
+        <h2 id="tornado-heading">تحليل الحساسية Tornado</h2>
+        <p>أثر تغيير كل متغير على حِدة بمقدار ±15% تقريباً (مع بقاء بقية المتغيرات عند خط الأساس) على تكلفة إنتاج المياه LCOW، مرتّبة من الأكثر تأثيراً للأقل.</p>
+      </div>
+
+      <div class="dash-tornado-axis" id="tornado-axis" aria-hidden="true"></div>
+      <div class="dash-tornado-chart" id="tornado-chart" role="img" aria-label="مخطط Tornado لحساسية تكلفة إنتاج المياه لثمانية متغيرات">
+        <!-- populated by dashboard.js -->
+      </div>
+
+      <p class="model-note">
+        🌪️ متغيّر «سعر الكربون» توضيحي وغير رسمي: يُحسب كخصم افتراضي من التكلفة بمعدل ≈0.0195
+        طن CO₂ لكل م³ (مشتق تقريباً من الانبعاثات الموفَّرة في سيناريو خط الأساس)، وليس سعراً
+        كربونياً معتمداً رسمياً في المملكة.
+      </p>
+
+      <div class="table-wrap">
+        <table class="compare-table" id="tornado-table">
+          <caption>القيم التفصيلية لكل متغيّر (LCOW بالدولار للمتر المكعب)</caption>
+          <thead>
+            <tr>
+              <th scope="col">المتغيّر</th>
+              <th scope="col">LCOW الأدنى</th>
+              <th scope="col">LCOW الأعلى</th>
+              <th scope="col">الفرق (مدى التأثير)</th>
+            </tr>
+          </thead>
+          <tbody id="tornado-table-body">
+            <!-- populated by dashboard.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MONTE CARLO UNCERTAINTY PANEL ============ -->
+  <section class="section" id="uncertainty" aria-labelledby="uncertainty-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Monte Carlo Simulation</span>
+        <h2 id="uncertainty-heading">عدم اليقين: محاكاة مونت كارلو (1000 عيّنة)</h2>
+        <p>
+          محاكاة حقيقية تُنفَّذ في المتصفح بمعدل 1000 تكرار: تُسحَب خمسة متغيرات عشوائياً بتوزيع
+          طبيعي (Box–Muller)، بانحراف معياري = 10% من القيمة الأساسية لكل متغيّر — وهذا الرقم
+          (10%) افتراض هندسي وضعناه لهذا النموذج، وليس إحصاءً مقاساً فعلياً.
+        </p>
+      </div>
+
+      <div class="dash-mc-panel reveal">
+        <div class="dash-stat-grid" id="mc-stat-grid">
+          <div class="dash-stat-card dash-tone-water">
+            <span class="dash-stat-num" id="mc-p10">—</span>
+            <span class="dash-stat-label">P10 — أقل 10% من النتائج المحتملة ($/م³)</span>
+          </div>
+          <div class="dash-stat-card dash-tone-nuclear">
+            <span class="dash-stat-num" id="mc-p50">—</span>
+            <span class="dash-stat-label">P50 — الوسيط ($/م³)</span>
+          </div>
+          <div class="dash-stat-card dash-tone-thermal">
+            <span class="dash-stat-num" id="mc-p90">—</span>
+            <span class="dash-stat-label">P90 — أعلى 10% من النتائج المحتملة ($/م³)</span>
+          </div>
+        </div>
+
+        <div class="dash-histogram" id="mc-histogram" role="img" aria-label="توزيع تكرارات نتائج محاكاة مونت كارلو"></div>
+
+        <div class="dash-mc-controls">
+          <button type="button" id="mc-rerun-btn" class="btn btn-secondary">🎲 إعادة تشغيل المحاكاة</button>
+          <span class="ff-mono" id="mc-meta">n = 1000</span>
+        </div>
+
+        <p class="model-note">
+          مؤشر ثانوي غير مستخدم في حساب LCOW: متوسط معامل انبعاثات الغاز الطبيعي المُعايَن —
+          <span id="mc-gas-mean" class="ff-mono">56.1</span> g CO₂/kWh تقريباً (خط أساس 56.1، بنفس افتراض الانحراف 10%).
+          كل تشغيل جديد للمحاكاة يُنتج عيّنات عشوائية مختلفة قليلاً — وهذا سلوك متوقع وصحيح لمحاكاة مونت كارلو حقيقية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>المشروع</h4>
+        <ul>
+          <li><a href="dashboard.html">لوحة التحكم</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="integration.html">التكامل التقني</a></li>
+          <li><a href="performance.html">الأداء</a></li>
+          <li><a href="safety.html">الأمان</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المفاعل والتحلية</h4>
+        <ul>
+          <li><a href="reactor.html">مفاعل SMART100</a></li>
+          <li><a href="plant.html">محطة رأس الخير</a></li>
+          <li><a href="msf.html">وحدات MSF</a></li>
+          <li><a href="ro.html">وحدات RO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>موارد ومقارنات</h4>
+        <ul>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+          <li><a href="glossary.html">المسرد</a></li>
+          <li><a href="references.html">المراجع والمصادر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/sensitivity-engine.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

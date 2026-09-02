@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأداء والسيناريوهات | SMART100 × رأس الخير</title>
+<meta name="description" content="مقارنة أربعة سيناريوهات طلب ثابتة، ونتائج محاكاة سنة كاملة، وتحليل الصيانة بتشغيل 9 مقابل 10 وحدات، وتحليل حساسية نظري لنسبة MSF إلى RO لتكامل مفاعل SMART100 مع محطة رأس الخير.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">تخطي إلى المحتوى الرئيسي</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html">MSF</a></li>
+      <li><a href="ro.html">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html">التكامل</a></li>
+      <li><a href="performance.html" aria-current="page">الأداء</a></li>
+      <li><a href="safety.html">السلامة</a></li>
+      <li><a href="glossary.html">قاموس المصطلحات</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="index.html" class="nav-cta">الصفحة الرئيسية</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">الرئيسية</a> / الأداء والسيناريوهات</p>
+    <span class="eyebrow">Performance &amp; Scenarios</span>
+    <h1>كيف يتصرّف النظام تحت أحمال طلب مختلفة؟</h1>
+    <p class="lead">
+      لا يكفي حساب تكلفة إنتاج مياه واحدة عند حمل واحد لتقييم جدوى تكامل SMART100 مع رأس الخير.
+      هذه الصفحة تستعرض أداء المنظومة عبر أربعة سيناريوهات طلب ثابتة، ثم عبر محاكاة سنة كاملة
+      بتقلبات موسمية واقعية، وتناقش بصراحة ماذا يحدث عند إخراج وحدة للصيانة، وتعرض نتيجة تحليل
+      حساسية نظري حول نسبة التقطير الحراري إلى التناضح العكسي.
+    </p>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container" style="padding-top:40px;">
+  <div class="ev-legend" role="list" aria-label="دليل مصادر البيانات">
+    <span class="ev-legend-label">مصدر البيانات:</span>
+    <span class="ev-legend-item is-official" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> رسمي</span>
+    <span class="ev-legend-item is-peer-reviewed" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محكّم علمياً</span>
+    <span class="ev-legend-item is-calculated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محسوب</span>
+    <span class="ev-legend-item is-estimated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> تقديري هندسي</span>
+    <span class="ev-legend-item is-user-input" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> إدخال المستخدم</span>
+  </div>
+</div>
+
+<!-- ============ FIXED SCENARIOS ============ -->
+<section class="section" id="scenarios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Fixed Demand Scenarios</span>
+      <h2>أربعة سيناريوهات طلب ثابتة</h2>
+      <p>
+        كل سيناريو يطبّق مضاعفاً على الطلب المائي وآخر على الطلب الكهربائي لمحطة رأس الخير،
+        لقياس تأثير كل نوع من الطلب على تكلفة إنتاج المياه (LCOW) بشكل منفصل.
+        اضغط على اسم أي سيناريو أو على عموده في الرسم لعرض تفاصيله.
+      </p>
+    </div>
+
+    <div class="perf-table-wrap">
+      <table class="perf-table">
+        <caption>مقارنة السيناريوهات الأربعة الثابتة — القيم من نموذج المشروع <span class="ev-badge ev-calculated">🧮 محسوب</span></caption>
+        <thead>
+          <tr>
+            <th scope="col">السيناريو</th>
+            <th scope="col">مضاعف الطلب المائي</th>
+            <th scope="col">مضاعف الطلب الكهربائي</th>
+            <th scope="col">LCOW ($/م³)</th>
+            <th scope="col">ملاحظة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-scenario="normal">
+            <th scope="row">
+              <button type="button" class="perf-row-btn" data-scenario="normal" aria-pressed="true" aria-controls="scenario-detail">عادي</button>
+            </th>
+            <td>1.0×</td>
+            <td>1.0×</td>
+            <td class="lcow-cell">5.67</td>
+            <td><span class="perf-badge">خط الأساس</span></td>
+          </tr>
+          <tr data-scenario="high-water">
+            <th scope="row">
+              <button type="button" class="perf-row-btn" data-scenario="high-water" aria-pressed="false" aria-controls="scenario-detail">ارتفاع الطلب المائي</button>
+            </th>
+            <td>1.2×</td>
+            <td>1.05×</td>
+            <td class="lcow-cell">5.40</td>
+            <td><span class="perf-badge min">الأرخص</span></td>
+          </tr>
+          <tr data-scenario="high-elec">
+            <th scope="row">
+              <button type="button" class="perf-row-btn" data-scenario="high-elec" aria-pressed="false" aria-controls="scenario-detail">ارتفاع الطلب الكهربائي</button>
+            </th>
+            <td>1.0×</td>
+            <td>1.2×</td>
+            <td class="lcow-cell">5.82</td>
+            <td><span class="perf-badge max">الأعلى تكلفة</span></td>
+          </tr>
+          <tr data-scenario="peak">
+            <th scope="row">
+              <button type="button" class="perf-row-btn" data-scenario="peak" aria-pressed="false" aria-controls="scenario-detail">الذروة</button>
+            </th>
+            <td>1.3×</td>
+            <td>1.3×</td>
+            <td class="lcow-cell">5.46</td>
+            <td><span class="perf-badge">يحدد حجم الأسطول (10 وحدات)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Live scenario detail panel -->
+    <div class="perf-detail" id="scenario-detail" aria-live="polite">
+      <span class="perf-detail-tag" id="scenario-detail-tag">السيناريو العادي</span>
+      <p id="scenario-detail-text">
+        السيناريو العادي (1.0× طلب مائي / 1.0× طلب كهربائي) هو خط الأساس: عشر وحدات SMART100
+        تغطي الطلب القياسي على المياه والكهرباء بتكلفة إنتاج مياه (LCOW) قدرها 5.67 دولار للمتر
+        المكعب.
+      </p>
+    </div>
+
+    <!-- LCOW bar chart, synced with the table above -->
+    <div class="perf-chart" role="group" aria-label="رسم بياني لتكلفة إنتاج المياه لكل سيناريو">
+      <button type="button" class="perf-bar" data-scenario="normal" aria-pressed="true">
+        <span class="perf-bar-value">5.67$</span>
+        <span class="perf-bar-track"><span class="perf-bar-fill" style="--h:61.7%"></span></span>
+        <span class="perf-bar-label">عادي</span>
+      </button>
+      <button type="button" class="perf-bar" data-scenario="high-water" aria-pressed="false">
+        <span class="perf-bar-value">5.40$</span>
+        <span class="perf-bar-track"><span class="perf-bar-fill" style="--h:16.7%"></span></span>
+        <span class="perf-bar-label">ارتفاع الطلب المائي</span>
+      </button>
+      <button type="button" class="perf-bar" data-scenario="high-elec" aria-pressed="false">
+        <span class="perf-bar-value">5.82$</span>
+        <span class="perf-bar-track"><span class="perf-bar-fill" style="--h:86.7%"></span></span>
+        <span class="perf-bar-label">ارتفاع الطلب الكهربائي</span>
+      </button>
+      <button type="button" class="perf-bar" data-scenario="peak" aria-pressed="false">
+        <span class="perf-bar-value">5.46$</span>
+        <span class="perf-bar-track"><span class="perf-bar-fill" style="--h:26.7%"></span></span>
+        <span class="perf-bar-label">الذروة</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL-YEAR SIMULATION ============ -->
+<section class="section section-alt" id="annual">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">365-Day Simulation</span>
+      <h2>محاكاة سنة كاملة بطلب موسمي واقعي</h2>
+      <p>
+        بدلاً من الاكتفاء بأربع نقاط ثابتة، شغّل النموذج المنظومة عبر 365 يوماً بتقلبات طلب
+        موسمية واقعية على مدار السنة، لاختبار ما إذا كان أسطول العشر وحدات يبقى كافياً طوال الوقت.
+      </p>
+    </div>
+
+    <div class="cards-2">
+      <div class="card reveal">
+        <span class="card-tag">Annual Average</span>
+        <h3>متوسط تكلفة الإنتاج السنوي <span class="ev-badge ev-calculated">🧮 محسوب</span></h3>
+        <p style="color:var(--text-1); font-family:var(--ff-mono); font-size:2rem; font-weight:700; margin:6px 0 14px;">
+          5.588<span style="font-size:1.1rem; color:var(--text-3);"> $/م³</span>
+        </p>
+        <p>
+          هذا المتوسط السنوي يقع ضمن نطاق السيناريوهات الأربعة الثابتة ($5.40–$5.82)، وهو ما
+          يؤكد أن السيناريوهات الثابتة تمثّل بالفعل الحدود الواقعية لتكلفة التشغيل على مدار السنة.
+        </p>
+        <div class="perf-range">
+          <div class="perf-range-track">
+            <div class="perf-range-fill"></div>
+            <span class="perf-range-marker" style="--pos:0%" title="ارتفاع الطلب المائي · 5.40$"></span>
+            <span class="perf-range-marker" style="--pos:14.3%" title="الذروة · 5.46$"></span>
+            <span class="perf-range-marker" style="--pos:64.3%" title="عادي · 5.67$"></span>
+            <span class="perf-range-marker" style="--pos:100%" title="ارتفاع الطلب الكهربائي · 5.82$"></span>
+            <span class="perf-range-marker is-avg" style="--pos:44.8%" title="المتوسط السنوي · 5.588$"></span>
+          </div>
+          <div class="perf-range-labels">
+            <span class="perf-range-label" style="--pos:0%">5.40$</span>
+            <span class="perf-range-label is-avg" style="--pos:44.8%">5.588$ (سنوي)</span>
+            <span class="perf-range-label" style="--pos:100%">5.82$</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <span class="card-tag">Utilization</span>
+        <h3>متوسط استغلال الأسطول <span class="ev-badge ev-calculated">🧮 محسوب</span></h3>
+        <p style="color:var(--text-1); font-family:var(--ff-mono); font-size:2rem; font-weight:700; margin:6px 0 14px;">
+          80.5<span style="font-size:1.1rem; color:var(--text-3);">%</span>
+        </p>
+        <div class="perf-gauge">
+          <div class="perf-gauge-track">
+            <div class="perf-gauge-fill" style="--w:80.5%"></div>
+          </div>
+          <div class="perf-gauge-scale">
+            <span>0%</span>
+            <span>50%</span>
+            <span>100% (سعة الوحدات العشر)</span>
+          </div>
+        </div>
+        <p style="margin-top:16px;">
+          صفر أيام من أصل 365 تجاوز فيها الطلب سعة الأسطول المُركّب (10 وحدات SMART100)،
+          حتى في ذروة التقلبات الموسمية.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAINTENANCE / RELIABILITY ============ -->
+<section class="section" id="reliability">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Maintenance &amp; Reliability</span>
+      <h2>الصيانة والموثوقية: ماذا يحدث عند تشغيل 9 وحدات فقط؟</h2>
+      <p>
+        أي وحدة نووية تحتاج فترة صيانة دورية دون تشغيل. يختبر التحليل هنا إخراج وحدة واحدة من
+        الخدمة (فيتبقى 9 من أصل 10 وحدات) مقابل كل سيناريو من السيناريوهات الأربعة الثابتة.
+      </p>
+    </div>
+
+    <div class="perf-status-grid">
+      <div class="perf-status-card ok reveal">
+        <div class="perf-status-icon" aria-hidden="true">✓</div>
+        <div class="perf-status-name">عادي</div>
+        <div class="perf-status-result">آمن بـ 9 وحدات</div>
+      </div>
+      <div class="perf-status-card ok reveal">
+        <div class="perf-status-icon" aria-hidden="true">✓</div>
+        <div class="perf-status-name">ارتفاع الطلب المائي</div>
+        <div class="perf-status-result">آمن بـ 9 وحدات</div>
+      </div>
+      <div class="perf-status-card ok reveal">
+        <div class="perf-status-icon" aria-hidden="true">✓</div>
+        <div class="perf-status-name">ارتفاع الطلب الكهربائي</div>
+        <div class="perf-status-result">آمن بـ 9 وحدات</div>
+      </div>
+      <div class="perf-status-card warn reveal">
+        <div class="perf-status-icon" aria-hidden="true">!</div>
+        <div class="perf-status-name">الذروة</div>
+        <div class="perf-status-result">يتجاوز سعة 9 وحدات</div>
+      </div>
+    </div>
+
+    <div class="perf-detail" style="margin-top:28px;">
+      <span class="perf-detail-tag">القراءة الصادقة للنتيجة</span> <span class="ev-badge ev-calculated">🧮 محسوب</span>
+      <p>
+        تشغيل تسع وحدات فقط (أي إخراج وحدة واحدة للصيانة) يبقى آمناً في ثلاثة من أصل أربعة
+        سيناريوهات ثابتة. السيناريو الوحيد الذي يتجاوز فيه الطلب سعة تسع وحدات هو سيناريو
+        <strong style="color:var(--text-1)">الذروة</strong> (1.3× / 1.3×) — وهو تحديداً السيناريو
+        الذي يحدد أصلاً الحاجة إلى عشر وحدات كاملة. الحل العملي الذي يقترحه النموذج ليس إضافة
+        وحدة حادية عشرة: جدولة نافذة الصيانة (حوالي 30 إلى 45 يوماً) خلال فترة الشتاء منخفضة
+        الطلب تُبقي التغطية آمنة طوال السنة كاملة، بحسب محاكاة الـ365 يوماً، دون أي حاجة لأسطول
+        إضافي.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MSF:RO SENSITIVITY ============ -->
+<section class="section section-alt" id="sensitivity">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Sensitivity Analysis</span>
+      <h2>نتيجة حساسية نظرية: نسبة MSF إلى RO</h2>
+      <p>
+        محطة رأس الخير الفعلية تجمع بين التقطير الحراري متعدد المراحل (MSF) والتناضح العكسي (RO)
+        بنسبة ثابتة تعكس تصميمها التاريخي. لكن ماذا يقول النموذج لو أُعيد تصميم منظومة تحلية
+        نووية من الصفر حول اقتصاديات SMR بدلاً من محاكاة تصميم رأس الخير كما هو؟
+      </p>
+    </div>
+
+    <div class="perf-split">
+      <h3 style="color:var(--text-1); font-size:1.05rem; margin-bottom:12px;">النسبة الفعلية في محطة رأس الخير اليوم</h3>
+      <div class="perf-split-bar">
+        <span class="perf-split-msf">MSF · 70.2%</span>
+        <span class="perf-split-ro">RO · 29.8%</span>
+      </div>
+      <div class="perf-split-legend">
+        <span class="msf"><i></i> تقطير حراري متعدد المراحل (MSF)</span>
+        <span class="ro"><i></i> تناضح عكسي (RO)</span>
+      </div>
+      <p style="margin-top:12px; font-size:.9rem;">
+        هذه النسبة حقيقة تاريخية ثابتة، ناتجة عن تصميم المحطة الأصلي القائم على توربينات
+        الغاز واستغلال حرارتها المهدرة (waste heat) — وليست نتيجة لأي حساب متعلق باقتصاديات
+        الطاقة النووية.
+      </p>
+    </div>
+
+    <div class="perf-insight reveal">
+      <span class="perf-insight-tag">⚠ تحليل حساسية نظري — وليس توصية بإعادة تصميم المحطة</span>
+      <p>
+        عند تحرير النموذج من قيد محاكاة تصميم رأس الخير التاريخي، والسماح له باختيار نسبة
+        MSF:RO المثلى من الصفر بناءً على اقتصاديات SMR وحدها، تميل النتيجة بوضوح نحو
+        <strong>الاعتماد الأكبر على RO</strong>. السبب: تكلفة الطاقة الكهربائية التي يستهلكها
+        RO لكل متر مكعب، عند التعبير عنها بما يعادلها حرارياً، أقل بكثير من تكلفة البخار
+        المباشر الذي يستهلكه MSF.
+      </p>
+      <p>
+        اللافت في النتيجة أن العلاقة بين النسبة والتكلفة في هذا النموذج جاءت <strong>خطية
+        وليست على شكل حرف U</strong> كما هو متوقع عادة في مسائل التحسين — أي أن نقطة التعادل
+        المثلى لا تقع في منتصف مزيج متوازن، بل عند الحد الأقصى الممكن، أي مزيج تهيمن عليه RO
+        بشكل شبه كامل.
+      </p>
+      <div class="perf-boundary-note">
+        <span>رأس الخير الفعلية: MSF 70.2% / RO 29.8%</span>
+        <span class="arrow" aria-hidden="true">⇠</span>
+        <span>الحد النظري للنموذج: أفضلية شبه كاملة لـ RO</span>
+      </div>
+      <p style="margin-top:16px;">
+        هذه النتيجة تحليل حساسية نظري ضمن نموذج هذا المشروع فقط، ولا تمثل توصية بإعادة تصميم
+        محطة رأس الخير الفعلية. النسبة الحالية 70.2%/29.8% صحيحة ومبنية على واقع تصميم المحطة
+        بمحطات توربينات غازية قائمة فعلياً، ولا علاقة لها باقتصاديات SMR. كما أن النتيجة النظرية
+        لا تأخذ بعين الاعتبار قيوداً هندسية وتشغيلية حقيقية أخرى (البنية التحتية القائمة، تعدد
+        مصادر الإنتاج كطبقة أمان تشغيلي، معالجة المياه المالحة، وغيرها) قد تجعل مزيجاً متوازناً
+        أكثر منطقية عملياً من الحل الحدّي الذي يقترحه النموذج المبسّط وحده.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section" id="cta">
+  <div class="container">
+    <div class="cta-band">
+      <span class="eyebrow">Explore Further</span>
+      <h2>تريد التعمق أكثر في التفاصيل؟</h2>
+      <p>
+        اطّلع على تحليل السلامة، أو قارن بين التقنيات النووية المرشحة، أو راجع كيف تتكامل
+        الحرارة والكهرباء فعلياً مع وحدات MSF وRO.
+      </p>
+      <div class="hero-ctas">
+        <a href="safety.html" class="btn btn-primary">تحليل السلامة <span class="btn-arrow">←</span></a>
+        <a href="tech-comparison.html" class="btn btn-secondary">مقارنة التقنيات <span class="btn-arrow">←</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>المشروع</h4>
+        <ul>
+          <li><a href="index.html">الصفحة الرئيسية</a></li>
+          <li><a href="integration.html">التكامل التقني</a></li>
+          <li><a href="performance.html" aria-current="page">الأداء والسيناريوهات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الأنظمة التقنية</h4>
+        <ul>
+          <li><a href="reactor.html">مفاعل SMART100</a></li>
+          <li><a href="plant.html">محطة رأس الخير</a></li>
+          <li><a href="msf.html">وحدات MSF</a></li>
+          <li><a href="ro.html">وحدات RO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تحليل ومصادر</h4>
+        <ul>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+          <li><a href="safety.html">السلامة</a></li>
+          <li><a href="glossary.html">قاموس المصطلحات</a></li>
+          <li><a href="references.html">المراجع والمصادر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/performance.js"></script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مفاعل SMART100 | التصميم، المواصفات، والأمان</title>
+<meta name="description" content="دليل تقني معمّق حول مفاعل SMART100: تصميمه كمفاعل ماء مضغوط متكامل (Integral PWR)، مواصفاته الرئيسية، شراكة KAERI و K.A.CARE، وفلسفة الأمان السلبي، ودوره في تزويد محطة رأس الخير.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html" aria-current="page">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html">MSF</a></li>
+      <li><a href="ro.html">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html">التكامل</a></li>
+      <li><a href="performance.html">الأداء</a></li>
+      <li><a href="safety.html">الأمان</a></li>
+      <li><a href="glossary.html">المسرد</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="integration.html" class="nav-cta">استكشف التكامل التقني</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">الرئيسية</a> ← المفاعل</p>
+    <span class="eyebrow">Reactor Deep-Dive · SMART100</span>
+    <h1>مفاعل <span class="accent-nuclear">SMART100</span>: القلب النووي لمشروع التكامل</h1>
+    <p class="lead">
+      نظرة تقنية معمّقة على مفاعل الماء المضغوط المتكامل SMART100 — ما هو، كيف يعمل من الداخل،
+      ما هي مواصفاته الرئيسية، وما القصة وراء الشراكة الكورية السعودية التي تقف خلفه، وصولاً
+      إلى فلسفته الأمنية ودوره في تزويد محطة رأس الخير بالحرارة والكهرباء.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <div class="container" style="padding-top:40px;">
+    <div class="ev-legend" role="list" aria-label="دليل مصادر البيانات">
+      <span class="ev-legend-label">مصدر البيانات:</span>
+      <span class="ev-legend-item is-official" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> رسمي</span>
+      <span class="ev-legend-item is-peer-reviewed" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محكّم علمياً</span>
+      <span class="ev-legend-item is-calculated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محسوب</span>
+      <span class="ev-legend-item is-estimated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> تقديري هندسي</span>
+      <span class="ev-legend-item is-user-input" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> إدخال المستخدم</span>
+    </div>
+  </div>
+
+  <!-- ============ WHAT IS AN SMR ============ -->
+  <section class="section" id="what-is-smr" aria-labelledby="smr-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">SMR 101</span>
+        <h2 id="smr-heading">ما هو المفاعل النووي المعياري الصغير (SMR)؟</h2>
+        <p>
+          قبل الدخول في تفاصيل SMART100، من المفيد فهم الفئة التقنية التي ينتمي إليها: المفاعلات
+          النووية المعيارية الصغيرة (Small Modular Reactors)، وهي فئة تختلف جوهرياً عن المحطات
+          النووية التقليدية الضخمة في ثلاث خصائص رئيسية.
+        </p>
+      </div>
+      <div class="cards-3">
+        <article class="card tone-reactor reveal">
+          <span class="card-tag">01 · Modular</span>
+          <div class="card-icon">🏗️</div>
+          <h3>معياري ومُصنَّع مسبقاً</h3>
+          <p>
+            تُصنَّع الأجزاء الرئيسية للمفاعل في مصنع مركزي بمعايير جودة موحدة، ثم تُنقل شبه
+            جاهزة إلى الموقع، بدلاً من بنائها بالكامل في الموقع كما هو الحال في المحطات
+            التقليدية. هذا يقلّص مدة الإنشاء ويقلل من مخاطر التأخير والتكلفة.
+          </p>
+        </article>
+        <article class="card tone-partner reveal">
+          <span class="card-tag">02 · Small</span>
+          <div class="card-icon">📏</div>
+          <h3>أصغر حجماً وقدرة</h3>
+          <p>
+            بينما تنتج المفاعلات التقليدية الكبيرة أكثر من 1,000 MWe للوحدة الواحدة غالباً،
+            تقتصر قدرة معظم تصاميم SMR على ما دون 300 MWe. مفاعل SMART100 تحديداً ينتج
+            <strong style="color:var(--text-1)"> 100 MWe</strong> فقط لكل وحدة، مما يسمح
+            بنشر عدة وحدات بشكل مرن حسب حجم الحمل المطلوب.
+          </p>
+        </article>
+        <article class="card tone-plant reveal">
+          <span class="card-tag">03 · Flexible Siting</span>
+          <div class="card-icon">📍</div>
+          <h3>مرونة في الموقع والتطبيق</h3>
+          <p>
+            بصمتها الفيزيائية الأصغر واحتياجها المحدود لمياه التبريد يجعلانها قابلة للتموضع
+            بالقرب من مراكز الطلب الصناعي مباشرة — كمحطات تحلية المياه الكبرى — بدلاً من
+            الاقتصار على مواقع نووية معزولة تقليدياً.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTEGRAL PWR DESIGN ============ -->
+  <section class="section section-alt" id="design" aria-labelledby="design-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Integral PWR</span>
+        <h2 id="design-heading">التصميم المتكامل: كيف يعمل SMART100 من الداخل؟</h2>
+        <p>
+          SMART100 هو مفاعل ماء مضغوط متكامل التصميم (Integral PWR) — وهي السمة الهندسية
+          التي تُميّزه وتجعله ملائماً بشكل خاص لتطبيقات التحلية.
+        </p>
+      </div>
+
+      <p style="max-width:820px;margin:0 auto 40px;text-align:center;">
+        في المفاعلات التقليدية، تتوزّع مكونات حلقة التبريد الأولية — المولدات البخارية،
+        المضخات، والمنظّم الضغطي — في أوعية منفصلة تربطها أنابيب كبيرة القطر. أما في التصميم
+        المتكامل، فإن جميع هذه المكونات الرئيسية تقع داخل <strong style="color:var(--text-1)">وعاء
+        ضغط واحد</strong> يحيط بقلب المفاعل مباشرة. اضغط على كل مكون أدناه للتعرّف على دوره.
+      </p>
+
+      <div class="explorer">
+        <div class="explorer-diagram" aria-hidden="false">
+          <div class="explorer-vessel">
+            <div class="explorer-core">قلب المفاعل<br>Core</div>
+            <button type="button" class="component-btn c1" data-target="core" aria-pressed="true">
+              <i></i> قلب المفاعل
+            </button>
+            <button type="button" class="component-btn c2" data-target="sg">
+              <i></i> مولدات البخار المدمجة
+            </button>
+            <button type="button" class="component-btn c3" data-target="pumps">
+              <i></i> المضخات الأولية
+            </button>
+            <button type="button" class="component-btn c4" data-target="pressurizer">
+              <i></i> المنظّم الضغطي
+            </button>
+            <button type="button" class="component-btn c5" data-target="vessel">
+              <i></i> وعاء الضغط الواحد
+            </button>
+          </div>
+        </div>
+
+        <div class="explorer-panel">
+          <span class="eyebrow">Component</span>
+          <h3 id="component-title">قلب المفاعل (Reactor Core)</h3>
+          <p id="component-desc" aria-live="polite">
+            المصدر الحراري الأساسي للمفاعل، حيث يولّد التفاعل النووي المتسلسل الحرارة التي
+            يحملها المبرد الأولي إلى مولدات البخار المحيطة به مباشرة داخل الوعاء نفسه.
+          </p>
+          <span class="explorer-hint">اضغط على أي مكون في الرسم للتبديل بين الشروحات</span>
+        </div>
+      </div>
+
+      <p style="max-width:820px;margin:40px auto 0;text-align:center;">
+        هذا التصميم المدمج يقلّص بشكل كبير طول الأنابيب الخارجية الحاملة للمبرد الأولي، ما يقلل
+        جوهرياً من احتمالية وقوع حادث فقدان مبرّد كبير (Large-break LOCA)، ويقلص البصمة الفيزيائية
+        للمحطة ككل — وهو ما يجعله مناسباً بشكل خاص للمواقع الصناعية المدمجة كمحطات التحلية، حيث
+        تُستثمر حرارته مباشرة في تشغيل وحدات MSF وكهرباؤه في تشغيل مضخات RO.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 3D INTERACTIVE MODEL ============ -->
+  <section class="section" id="reactor-3d" aria-labelledby="r3d-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Interactive 3D</span>
+        <h2 id="r3d-heading">النموذج التفاعلي ثلاثي الأبعاد لمفاعل SMART100</h2>
+        <p>
+          نموذج ثلاثي الأبعاد مبسّط وتوضيحي (وليس مخططاً هندسياً معتمداً) لتصميم SMART100 كمفاعل
+          ماء مضغوط متكامل (Integral PWR). استخدم الفأرة لتدوير النموذج وتكبيره أو تصغيره، واضغط
+          على أي مكون بداخله — أو اختره من القائمة الجانبية — للتعرّف عليه.
+        </p>
+      </div>
+
+      <div class="r3d-wrap">
+        <div class="r3d-stage">
+          <div class="r3d-canvas-container" id="r3d-container">
+            <canvas id="r3d-canvas" aria-label="نموذج ثلاثي الأبعاد تفاعلي لمفاعل SMART100"></canvas>
+            <div class="r3d-loading" id="r3d-loading">
+              <span class="r3d-spinner" aria-hidden="true"></span>
+              <span>جارِ تحميل النموذج ثلاثي الأبعاد...</span>
+            </div>
+            <div class="r3d-fallback" id="r3d-fallback" hidden>
+              <p>
+                تعذّر تحميل محرّك العرض ثلاثي الأبعاد (Three.js) في هذا المتصفح أو الاتصال.
+                يمكنك الاطلاع على شرح مكونات المفاعل في
+                <a href="#design">قسم استكشاف المكونات أعلاه</a>، أو في القائمة المقابلة.
+              </p>
+            </div>
+          </div>
+          <div class="r3d-toolbar">
+            <button type="button" class="r3d-btn" id="r3d-toggle-rotate">⏸ إيقاف الدوران التلقائي</button>
+            <button type="button" class="r3d-btn" id="r3d-reset-view">↺ إعادة ضبط العرض</button>
+          </div>
+        </div>
+
+        <div class="r3d-panel">
+          <span class="eyebrow">Component</span>
+          <h3 id="r3d-title">قلب المفاعل</h3>
+          <p id="r3d-desc" aria-live="polite">اضغط على أي جزء من النموذج ثلاثي الأبعاد، أو اختر مكوناً من القائمة أدناه لعرض شرح عنه.</p>
+          <ul class="r3d-list" id="r3d-list" role="list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPECS STRIP ============ -->
+  <section class="section" id="specs" aria-labelledby="specs-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Key Specs</span>
+        <h2 id="specs-heading">المواصفات الرئيسية</h2>
+        <p>الأرقام الأساسية التي تحدّد قدرة الوحدة الواحدة من SMART100 وحدودها التصميمية.</p>
+      </div>
+      <div class="stats-grid-3">
+        <div class="stat-card reveal">
+          <span class="stat-num">100 MWe</span>
+          <span class="stat-label">الطاقة الكهربائية الصافية لكل وحدة</span>
+          <span class="ev-badge ev-official">✓ رسمي</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num">330 MWth</span>
+          <span class="stat-label">الطاقة الحرارية الإجمالية لكل وحدة</span>
+          <span class="ev-badge ev-official">✓ رسمي</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num">≈30.3%</span>
+          <span class="stat-label">كفاءة التحويل من الحراري إلى الكهربائي</span>
+          <span class="ev-badge ev-official">✓ رسمي</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num">40,000 م³/يوم</span>
+          <span class="stat-label">إنتاج مياه محلاة تقريبي للوحدة الواحدة عند اقترانها بالتحلية</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num">60 عاماً</span>
+          <span class="stat-label">العمر التصميمي للمفاعل</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-num">≈3 سنوات*</span>
+          <span class="stat-label">فترة إعادة التزود بالوقود التقديرية</span>
+          <span class="ev-badge ev-estimated">≈ تقديري</span>
+        </div>
+      </div>
+      <p class="stats-note">
+        * رقم إعادة التزود بالوقود تقدير هندسي مبني على أدبيات عامة حول مفاعلات SMR المشابهة،
+        وليس رقماً رسمياً مؤكداً من KAERI لهذا المفاعل تحديداً.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ KAERI × K.A.CARE PARTNERSHIP ============ -->
+  <section class="section section-alt" id="partnership" aria-labelledby="partnership-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">KAERI × K.A.CARE</span>
+        <h2 id="partnership-heading">شراكة كورية سعودية قائمة منذ 2015</h2>
+        <p>
+          SMART100 ليس مجرد تصميم نظري — بل مشروع تعاون مؤسسي فعلي بين طرفين متخصصين، مستمر
+          منذ أكثر من عقد.
+        </p>
+      </div>
+      <div class="cards-2">
+        <article class="card tone-reactor reveal">
+          <span class="card-tag">Developer</span>
+          <div class="card-icon">🇰🇷</div>
+          <h3>KAERI: مطوّر التقنية</h3>
+          <p>
+            مؤسسة أبحاث الطاقة الذرية الكورية <strong style="color:var(--text-1)">KAERI</strong>
+            هي الجهة التي طوّرت تقنية SMART (System-integrated Modular Advanced ReacTor) في
+            كوريا الجنوبية، وحصل التصميم على الموافقة التصميمية القياسية من الجهة التنظيمية
+            الكورية، ليصبح أساساً لتصدير التقنية وتوطينها في أسواق شريكة.
+          </p>
+        </article>
+        <article class="card tone-partner reveal">
+          <span class="card-tag">Partner</span>
+          <div class="card-icon">🇸🇦</div>
+          <h3>K.A.CARE: الشريك السعودي</h3>
+          <p>
+            في عام <strong style="color:var(--text-1)">2015</strong>، وقّعت
+            <strong style="color:var(--text-1)"> KAERI</strong> ومدينة الملك عبدالله للطاقة
+            الذرية والمتجددة <strong style="color:var(--text-1)"> K.A.CARE</strong> اتفاقية
+            شراكة رسمية لدراسة تطوير وتوطين SMART100 كأحد الخيارات النووية المعيارية الصغيرة
+            في المملكة، بما في ذلك تقييم جدواه في تطبيقات التحلية المدمجة بالطاقة النووية.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY PHILOSOPHY ============ -->
+  <section class="section" id="safety" aria-labelledby="safety-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Passive Safety</span>
+        <h2 id="safety-heading">فلسفة الأمان: الأمان السلبي</h2>
+        <p>
+          تعتمد الأنظمة الأمنية في SMART100 على مبدأ <strong style="color:var(--text-1)">الأمان
+          السلبي (Passive Safety)</strong> — إذ تستخدم أنظمة التبريد الطارئة قوى الجاذبية
+          والحمل الحراري الطبيعي لإزالة الحرارة المتبقية من القلب، دون الحاجة لمضخات تعمل
+          بالكهرباء أو تدخل بشري فوري في حالة وقوع خلل تشغيلي.
+        </p>
+      </div>
+
+      <h3 style="text-align:center;font-size:1.1rem;color:var(--text-1);margin-bottom:24px;">
+        أسئلة شائعة حول أمان المفاعل
+      </h3>
+      <div class="accordion" id="safety-accordion">
+        <div class="accordion-item">
+          <h4 style="margin:0;">
+            <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="panel-1" id="trigger-1">
+              <span>ما الفرق بين الأمان السلبي والأمان الفعّال (Active Safety)؟</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+          </h4>
+          <div class="accordion-panel" id="panel-1" role="region" aria-labelledby="trigger-1">
+            <div class="accordion-panel-inner">
+              <p>
+                الأمان الفعّال يعتمد على مضخات وأنظمة تحتاج طاقة كهربائية وإشارات تحكم لتعمل،
+                بينما الأمان السلبي يعتمد على ظواهر فيزيائية تلقائية — كالجاذبية والحمل الحراري
+                الطبيعي وفرق الكثافة — تعمل بحكم تصميمها دون الحاجة لأي مصدر طاقة خارجي أو أمر تشغيل.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h4 style="margin:0;">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="panel-2" id="trigger-2">
+              <span>ماذا يحدث في حال انقطاع الكهرباء بالكامل عن الموقع (Station Blackout)؟</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+          </h4>
+          <div class="accordion-panel" id="panel-2" role="region" aria-labelledby="trigger-2">
+            <div class="accordion-panel-inner">
+              <p>
+                تُفعَّل أنظمة التبريد الطارئة تلقائياً معتمدة على الجاذبية والحمل الحراري الطبيعي
+                لإزالة الحرارة المتبقية من القلب، دون حاجة لأي مضخة كهربائية تعمل، وذلك بفضل
+                فرق الارتفاع والكثافة المصمَّم داخل منظومة المفاعل نفسها.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h4 style="margin:0;">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="panel-3" id="trigger-3">
+              <span>هل يحتاج المشغلون للتدخل البشري فوراً؟</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+          </h4>
+          <div class="accordion-panel" id="panel-3" role="region" aria-labelledby="trigger-3">
+            <div class="accordion-panel-inner">
+              <p>
+                لا. صُممت الأنظمة السلبية للعمل تلقائياً دون تدخل بشري فوري في حال وقوع خلل
+                تشغيلي، مما يمنح فريق التشغيل الوقت الكافي لتقييم الوضع والاستجابة بشكل مدروس
+                بدلاً من اتخاذ قرارات تحت ضغط زمني حرج.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h4 style="margin:0;">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="panel-4" id="trigger-4">
+              <span>كيف يعزز التصميم المتكامل (Integral PWR) الأمان؟</span>
+              <span class="accordion-icon" aria-hidden="true">+</span>
+            </button>
+          </h4>
+          <div class="accordion-panel" id="panel-4" role="region" aria-labelledby="trigger-4">
+            <div class="accordion-panel-inner">
+              <p>
+                بتقليل طول الأنابيب الخارجية الحاملة للمبرد الأولي وعدد الوصلات بينها، ينخفض عدد
+                نقاط الفشل المحتملة في المنظومة، وتنخفض بشكل خاص احتمالية وقوع حادث فقدان مبرّد
+                كبير (Large-break LOCA)، وهو أحد أكثر السيناريوهات التي تُصمَّم أنظمة الأمان
+                التقليدية للتعامل معها.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FROM REACTOR TO RAS AL-KHAIR ============ -->
+  <section class="section section-alt" id="ras-al-khair" aria-labelledby="rak-heading">
+    <div class="container">
+      <div class="cta-band">
+        <span class="eyebrow">From Reactor to Plant</span>
+        <h2 id="rak-heading">من المفاعل إلى محطة رأس الخير</h2>
+        <p>
+          في سيناريو هذا المشروع، تحتاج محطة رأس الخير — بحمولتها الحرارية والكهربائية القصوى —
+          إلى <strong style="color:var(--text-1)">عشر وحدات</strong> من SMART100 لتغطية كامل
+          ذروة الطلب، بحيث تحل الحرارة الناتجة محل بخار الغاز الطبيعي في تشغيل وحدات MSF،
+          وتحل الكهرباء محل الكهرباء المولّدة بالغاز في تشغيل مضخات RO، على مدار ساعات التشغيل
+          الكاملة للسنة.
+        </p>
+        <div class="hero-ctas">
+          <a href="integration.html" class="btn btn-primary">استكشف التكامل التقني الكامل <span class="btn-arrow">←</span></a>
+          <a href="plant.html" class="btn btn-secondary">تعرّف على محطة رأس الخير <span class="btn-arrow">←</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>المشروع</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="integration.html">التكامل التقني</a></li>
+          <li><a href="performance.html">الأداء</a></li>
+          <li><a href="safety.html">الأمان</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المفاعل والتحلية</h4>
+        <ul>
+          <li><a href="reactor.html">مفاعل SMART100</a></li>
+          <li><a href="plant.html">محطة رأس الخير</a></li>
+          <li><a href="msf.html">وحدات MSF</a></li>
+          <li><a href="ro.html">وحدات RO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>موارد ومقارنات</h4>
+        <ul>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+          <li><a href="glossary.html">المسرد</a></li>
+          <li><a href="references.html">المراجع والمصادر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/reactor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/reactor-3d-data.js"></script>
+<script src="js/reactor-3d.js"></script>
+</body>
+</html>

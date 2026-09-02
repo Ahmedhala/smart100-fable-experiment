@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSF — التقطير الومضي متعدد المراحل | SMART100 × رأس الخير</title>
+<meta name="description" content="شرح تفصيلي لتقنية MSF: مبدأ الفلاش الحراري متعدد المراحل، معامل الأداء GOR، استهلاك الطاقة الحرارية النوعي، ودور البخار القادم من مفاعل SMART100.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">تجاوز إلى المحتوى الرئيسي</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="التنقل الرئيسي">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html" aria-current="page">MSF</a></li>
+      <li><a href="ro.html">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html">التكامل</a></li>
+      <li><a href="performance.html">الأداء</a></li>
+      <li><a href="safety.html">الأمان</a></li>
+      <li><a href="glossary.html">المصطلحات</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="index.html#cta" class="nav-cta">استكشف المشروع</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="مسار التصفح">
+      <a href="index.html">الرئيسية</a><span class="sep" aria-hidden="true">/</span>
+      <a href="plant.html">المحطة</a><span class="sep" aria-hidden="true">/</span>
+      <span aria-current="page">MSF</span>
+    </nav>
+    <span class="eyebrow">Multi-Stage Flash Distillation</span>
+    <h1>MSF — التقطير الومضي متعدد المراحل</h1>
+    <p class="lead">
+      أقدم وأكثر تقنيات التحلية الحرارية انتشاراً في الخليج العربي، وهي التقنية التي تُنتج
+      <strong style="color:var(--text-1)"> 70.2%</strong> من مياه محطة رأس الخير عبر
+      <strong style="color:var(--text-1)"> 8 وحدات</strong>. تعتمد على تبخير مياه البحر
+      "ومضياً" على مراحل متتالية بدلاً من غليها دفعة واحدة، وتحتاج بخاراً حرارياً — وهو
+      بالضبط ما يمكن لمفاعل SMART100 تزويده مباشرة.
+    </p>
+    <div class="page-hero-stats" role="list" aria-label="مؤشرات أداء MSF">
+      <div class="mini-stat" role="listitem"><b>GOR ≈ 10</b><span>كجم بخار مقطّر لكل كجم بخار تسخين</span></div>
+      <div class="mini-stat" role="listitem"><b>62.7 kWh(th)/m³</b><span>الاستهلاك الحراري النوعي</span></div>
+      <div class="mini-stat" role="listitem"><b>70.2%</b><span>من إنتاج محطة رأس الخير</span></div>
+      <div class="mini-stat" role="listitem"><b>8 وحدات</b><span>تعمل ضمن المنظومة الهجينة</span></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ PRINCIPLE ============ -->
+  <section class="section" aria-labelledby="principle-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Physical Principle</span>
+        <h2 id="principle-h">كيف يعمل الفلاش الحراري؟</h2>
+        <p>سلسلة من غرف التبخير المتتالية، كل غرفة بضغط أقل من التي قبلها.</p>
+      </div>
+      <p>
+        في تقنية MSF، تُسخَّن مياه البحر المُغذّية إلى درجة حرارة عالية نسبياً، ثم تُدفع عبر
+        سلسلة من الغرف (المراحل) المرتبة بترتيب <strong style="color:var(--text-1)">ضغط
+        متناقص</strong>. عند دخول المياه الساخنة إلى كل مرحلة، ينخفض الضغط المحيط بها فجأة عن
+        نقطة التشبع، فتتحول كمية صغيرة من الماء فوراً إلى بخار — وهي ظاهرة "الومض" أو
+        Flash Evaporation — بينما يتكاثف هذا البخار على أنابيب تبريد وينتج عنها الماء
+        المقطّر (Distillate) النقي. تتكرر هذه العملية عبر عشرات المراحل المتتالية، وتنخفض
+        الحرارة والضغط تدريجياً في كل مرحلة حتى تصل مياه التبريد إلى نهاية السلسلة.
+      </p>
+      <p>
+        الخاصية الجوهرية التي تجعل MSF فعالة رغم حاجتها لطاقة حرارية عالية هي
+        <strong style="color:var(--text-1)"> استرجاع الحرارة الداخلي</strong>: الحرارة
+        المتحررة من تكاثف البخار في كل مرحلة تُستخدم لتسخين مياه التغذية القادمة للمرحلة
+        التالية، بدلاً من فقدانها. هذا التسلسل من الاسترجاع الحراري هو ما يجعل معامل الأداء
+        GOR أعلى بكثير من واحد لكل وحدة بخار تسخين مُدخلة.
+      </p>
+
+      <div class="stepper">
+        <div class="stepper-track" role="tablist" aria-label="مراحل عملية التقطير الومضي">
+          <button type="button" class="stepper-btn" role="tab" id="step-tab-1" aria-controls="step-panel-1" aria-selected="true" data-step="1"><span class="num">1</span> تسخين المياه</button>
+          <button type="button" class="stepper-btn" role="tab" id="step-tab-2" aria-controls="step-panel-2" aria-selected="false" data-step="2" tabindex="-1"><span class="num">2</span> دخول المرحلة</button>
+          <button type="button" class="stepper-btn" role="tab" id="step-tab-3" aria-controls="step-panel-3" aria-selected="false" data-step="3" tabindex="-1"><span class="num">3</span> الومض والتبخر</button>
+          <button type="button" class="stepper-btn" role="tab" id="step-tab-4" aria-controls="step-panel-4" aria-selected="false" data-step="4" tabindex="-1"><span class="num">4</span> التكاثف والاسترجاع</button>
+          <button type="button" class="stepper-btn" role="tab" id="step-tab-5" aria-controls="step-panel-5" aria-selected="false" data-step="5" tabindex="-1"><span class="num">5</span> تجميع المقطّر</button>
+        </div>
+        <div class="step-panel active" id="step-panel-1" role="tabpanel" aria-labelledby="step-tab-1" data-step="1">
+          <h3>1. تسخين المياه في المسخّن الرئيسي (Brine Heater)</h3>
+          <p>يرفع البخار القادم من مصدر الحرارة — في هذا المشروع، بخار مباشر من مفاعل SMART100 — درجة حرارة مياه البحر المُغذّية إلى أقصى درجة حرارة تشغيلية في الدورة، قبل دخولها سلسلة المراحل.</p>
+        </div>
+        <div class="step-panel" id="step-panel-2" role="tabpanel" aria-labelledby="step-tab-2" data-step="2" hidden>
+          <h3>2. دخول المياه إلى المرحلة الأولى</h3>
+          <p>تُضخّ المياه الساخنة إلى الغرفة الأولى، التي تُحافظ على ضغط أقل من ضغط تشبّع الماء عند درجة حرارته الحالية.</p>
+        </div>
+        <div class="step-panel" id="step-panel-3" role="tabpanel" aria-labelledby="step-tab-3" data-step="3" hidden>
+          <h3>3. الومض الفوري (Flashing)</h3>
+          <p>انخفاض الضغط المفاجئ يجعل جزءاً من الماء غير مستقر حرارياً، فيتبخر "ومضياً" ودون غليان تقليدي، تاركاً المياه المتبقية أكثر تركيزاً بالملوحة (Brine) لتنتقل إلى المرحلة التالية بضغط أقل فأقل.</p>
+        </div>
+        <div class="step-panel" id="step-panel-4" role="tabpanel" aria-labelledby="step-tab-4" data-step="4" hidden>
+          <h3>4. التكاثف واسترجاع الحرارة</h3>
+          <p>يتكاثف البخار المتصاعد على حزمة أنابيب تحمل مياه التغذية الداخلة حديثاً، فينقل حرارته الكامنة إليها ويسخّنها قبل دخولها المراحل — وهذا الاسترجاع الداخلي هو أساس كفاءة MSF.</p>
+        </div>
+        <div class="step-panel" id="step-panel-5" role="tabpanel" aria-labelledby="step-tab-5" data-step="5" hidden>
+          <h3>5. تجميع الماء المقطّر</h3>
+          <p>يُجمع الماء المتكاثف من جميع المراحل كماء مقطّر نقي جداً، بغض النظر عن ملوحة مياه البحر الأصلية، ليصبح جاهزاً للمعالجة النهائية والتوزيع.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3D INTERACTIVE MODEL ============ -->
+  <section class="section" id="msf-3d" aria-labelledby="m3d-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Interactive 3D</span>
+        <h2 id="m3d-heading">النموذج التفاعلي ثلاثي الأبعاد لسلسلة MSF</h2>
+        <p>
+          نموذج ثلاثي الأبعاد مبسّط وتوضيحي (وليس مخططاً هندسياً معتمداً) لسلسلة غرف الفلاش
+          الحراري. استخدم الفأرة لتدوير النموذج وتكبيره أو تصغيره، واضغط على أي مكون بداخله —
+          أو اختره من القائمة الجانبية — للتعرّف عليه، وشغّل حركة الدورة لمشاهدة مسار المياه
+          والبخار والمقطّر.
+        </p>
+      </div>
+
+      <div class="m3d-wrap">
+        <div class="m3d-stage">
+          <div class="m3d-canvas-container" id="m3d-container">
+            <canvas id="m3d-canvas" aria-label="نموذج ثلاثي الأبعاد تفاعلي لسلسلة غرف الفلاش الحراري MSF"></canvas>
+            <div class="m3d-loading" id="m3d-loading">
+              <span class="m3d-spinner" aria-hidden="true"></span>
+              <span>جارِ تحميل النموذج ثلاثي الأبعاد...</span>
+            </div>
+            <div class="m3d-fallback" id="m3d-fallback" hidden>
+              <p>
+                تعذّر تحميل محرّك العرض ثلاثي الأبعاد (Three.js) في هذا المتصفح أو الاتصال.
+                يمكنك الاطلاع على شرح مراحل عملية التقطير الومضي في
+                <a href="#principle-h">قسم المبدأ الفيزيائي أعلاه</a>، أو في القائمة المقابلة.
+              </p>
+            </div>
+          </div>
+          <div class="m3d-toolbar">
+            <button type="button" class="m3d-btn" id="m3d-toggle-flow" aria-pressed="true">⏸ حركة الدورة</button>
+            <button type="button" class="m3d-btn" id="m3d-toggle-rotate" aria-pressed="false">🔄 دوران تلقائي</button>
+            <button type="button" class="m3d-btn" id="m3d-reset-view">↺ إعادة ضبط العرض</button>
+          </div>
+          <p class="m3d-hint">اسحب للتدوير • عجلة الفأرة للتكبير/التصغير • انقر على أي جزء للتفاصيل</p>
+        </div>
+
+        <div class="m3d-panel">
+          <span class="eyebrow">Component</span>
+          <h3 id="m3d-title">اختر مكوناً</h3>
+          <p id="m3d-desc" aria-live="polite">اضغط على أي جزء من النموذج ثلاثي الأبعاد، أو اختر مكوناً من القائمة أدناه لعرض شرح عنه.</p>
+          <ul class="m3d-list" id="m3d-list" role="list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEAM INPUT FROM SMART100 ============ -->
+  <section class="section section-alt" aria-labelledby="steam-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Steam Coupling</span>
+        <h2 id="steam-h">دور البخار القادم من مفاعل SMART100</h2>
+        <p>اقتران حراري مباشر بين المفاعل ووحدات MSF، دون وسيط احتراق.</p>
+      </div>
+      <p>
+        في التصميم الحالي لمحطة رأس الخير، يأتي البخار اللازم لتسخين مياه التغذية في المسخّن
+        الرئيسي من غلايات تعمل بحرق الغاز الطبيعي. في المقابل، يقترح هذا المشروع استبدال هذا
+        المصدر ببخار حراري ينتجه مباشرة مفاعل <strong style="color:var(--text-1)">SMART100</strong>
+        (بقدرة حرارية 330 MWth لكل وحدة من أصل عشر وحدات)، يُنقل عبر مبادلات حرارية إلى دائرة
+        MSF دون تلامس مباشر بين الدائرة الأولية للمفاعل ومياه البحر، حفاظاً على الفصل الإشعاعي
+        الكامل بين المنظومتين.
+      </p>
+      <p>
+        هذا الاقتران الحراري المباشر يحافظ على نفس درجات الحرارة والضغوط التشغيلية التي صُممت
+        عليها وحدات MSF الثماني أصلاً، بما يعني إمكانية دمج مصدر الطاقة الجديد دون الحاجة لإعادة
+        تصميم أو استبدال المعدات الحالية للتحلية.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PERFORMANCE METRICS ============ -->
+  <section class="section" aria-labelledby="perf-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Performance Metrics</span>
+        <h2 id="perf-h">معامل الأداء GOR واستهلاك الطاقة</h2>
+        <p>مقياسان أساسيان لتقييم كفاءة أي وحدة MSF.</p>
+      </div>
+      <div class="stats-grid" style="position:static; margin:0;">
+        <div class="stat-card in-view">
+          <span class="stat-num" style="color:var(--thermal)">GOR ≈ 10</span>
+          <span class="stat-label">معامل الأداء (Gain Output Ratio) في نموذج هذا المشروع — أي نحو 10 كجم ماء مقطّر لكل كجم بخار تسخين مُدخل، بفضل استرجاع الحرارة بين المراحل</span>
+        </div>
+        <div class="stat-card in-view">
+          <span class="stat-num" style="color:var(--thermal)">62.7 kWh(th)/m³</span>
+          <span class="stat-label">الاستهلاك النوعي للطاقة الحرارية لإنتاج كل متر مكعب من الماء المقطّر</span>
+        </div>
+      </div>
+      <p style="margin-top:28px;">
+        كلما ارتفع معامل GOR، انخفضت كمية البخار اللازمة لإنتاج كمية معينة من الماء المقطّر،
+        أي ارتفعت كفاءة استخدام الطاقة الحرارية. القيمة المعتمدة في نموذج هذا المشروع
+        (GOR ≈ 10) تعكس تصميماً متعدد المراحل بمستوى استرجاع حراري جيد، وهي متسقة مع الاستهلاك
+        النوعي المقدّر بنحو 62.7 kWh(th) لكل متر مكعب من الإنتاج.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROS & CONS ============ -->
+  <section class="section section-alt" aria-labelledby="proscons-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trade-offs</span>
+        <h2 id="proscons-h">مزايا وعيوب تقنية MSF</h2>
+        <p>موازنة صريحة بين موثوقية التقنية وتكلفتها الطاقوية.</p>
+      </div>
+      <div class="pros-cons">
+        <div class="pc-col pros">
+          <h3>✅ المزايا</h3>
+          <ul>
+            <li><i aria-hidden="true">•</i> نقاوة منتج عالية جداً بغض النظر عن ملوحة مياه التغذية، لأن الفصل يتم عبر التبخر والتكاثف وليس عبر الترشيح</li>
+            <li><i aria-hidden="true">•</i> تحمّل عالٍ لتقلبات جودة مياه البحر الداخلة، دون تأثر كبير بالأداء</li>
+            <li><i aria-hidden="true">•</i> تقنية مُثبتة عملياً على نطاق واسع منذ عقود طويلة من التشغيل الصناعي</li>
+          </ul>
+        </div>
+        <div class="pc-col cons">
+          <h3>⚠️ العيوب</h3>
+          <ul>
+            <li><i aria-hidden="true">•</i> احتياج طاقة حرارية مرتفع نسبياً (نحو 62.7 kWh(th)/m³) مقارنة بالتقنيات الغشائية</li>
+            <li><i aria-hidden="true">•</i> تعقيد ميكانيكي أكبر بسبب تعدد المراحل والمبادلات الحرارية والمضخات المرافقة</li>
+            <li><i aria-hidden="true">•</i> تراكم الترسبات والقشور (Scaling/Fouling) على أسطح التبادل الحراري مع الزمن، ما يستدعي صيانة دورية</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT ============ -->
+  <section class="section" aria-labelledby="next-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Continue Reading</span>
+        <h2 id="next-h">قارن الآن مع تقنية RO</h2>
+        <p>بعد فهم MSF، تعرّف على التقنية الغشائية المقابلة، أو انتقل مباشرة إلى المقارنة الجانبية.</p>
+      </div>
+      <div class="cards-3">
+        <a href="ro.html" class="card tone-ro reveal" style="display:block;">
+          <span class="card-tag">Next</span>
+          <div class="card-icon">💠</div>
+          <h3>RO — التناضح العكسي</h3>
+          <p>مبدأ الأغشية شبه المنفذة، والاستهلاك الكهربائي النوعي.</p>
+        </a>
+        <a href="tech-comparison.html" class="card tone-why reveal" style="display:block;">
+          <span class="card-tag">Compare</span>
+          <div class="card-icon">📊</div>
+          <h3>مقارنة التقنيات</h3>
+          <p>جدول تفاعلي جنباً إلى جنب بين MSF وRO، وخلاصة عن الحل الهجين.</p>
+        </a>
+        <a href="plant.html" class="card tone-plant reveal" style="display:block;">
+          <span class="card-tag">Back</span>
+          <div class="card-icon">🏭</div>
+          <h3>محطة رأس الخير</h3>
+          <p>عد إلى نظرة عامة على المحطة وبنيتها الهجينة الكاملة.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>الصفحات الرئيسية</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="reactor.html">مفاعل SMART100</a></li>
+          <li><a href="plant.html">محطة رأس الخير</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تقنيات التحلية</h4>
+        <ul>
+          <li><a href="msf.html">MSF — التقطير الومضي</a></li>
+          <li><a href="ro.html">RO — التناضح العكسي</a></li>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+          <li><a href="integration.html">التكامل التقني</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>موارد ومعطيات</h4>
+        <ul>
+          <li><a href="performance.html">الأداء والمحاكاة</a></li>
+          <li><a href="safety.html">الأمان النووي</a></li>
+          <li><a href="glossary.html">مسرد المصطلحات</a></li>
+          <li><a href="references.html">المراجع والمصادر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/interactive.js"></script>
+<script src="js/msf-3d-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/msf-3d.js"></script>
+</body>
+</html>

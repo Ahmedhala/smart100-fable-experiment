@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كيف يتكامل النظامان؟ | SMART100 × رأس الخير</title>
+<meta name="description" content="شرح مفصّل لكيفية تغذية مفاعلات SMART100 لمسارين متوازيين — بخار مباشر لوحدات MSF وكهرباء لمضخات RO — مع مقارنة سيناريوهات التوزيع، وتحليل الموثوقية، والأثر البيئي وفق نموذج هذا المشروع.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html">MSF</a></li>
+      <li><a href="ro.html">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html" aria-current="page">التكامل</a></li>
+      <li><a href="performance.html">الأداء</a></li>
+      <li><a href="safety.html">السلامة</a></li>
+      <li><a href="glossary.html">المصطلحات</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="performance.html" class="nav-cta">شاهد نتائج الأداء</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero int-hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">The Integration Story</span>
+      <h1>
+        من قلب مفاعل واحد… إلى
+        <span class="accent-thermal">بخار</span> يقطّر و
+        <span class="accent-nuclear">كهرباء</span> تُنقّي
+      </h1>
+      <p class="lead">
+        هذه هي الصفحة التي تربط كل أجزاء المشروع ببعضها: كيف تتحول القدرة الحرارية لعشر
+        وحدات <strong style="color:var(--text-1)">SMART100</strong> إلى مسارين متوازيين
+        يعملان في آنٍ واحد — مسار حراري يغذّي وحدات <strong style="color:var(--text-1)">MSF</strong>
+        ببخار مباشر، ومسار كهربائي يُشغّل مضخات الضغط العالي في وحدات
+        <strong style="color:var(--text-1)">RO</strong> — دون أن يُلغي أحدهما الآخر، تماماً
+        كما تعمل محطة رأس الخير الهجينة اليوم.
+      </p>
+      <div class="hero-ctas">
+        <a href="#paths" class="btn btn-primary">شاهد المسارين المتوازيين <span class="btn-arrow">←</span></a>
+        <a href="#scenarios" class="btn btn-secondary">قارن سيناريوهات التوزيع <span class="btn-arrow">←</span></a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="reactor-rings">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="core">10×<br>SMART100</div>
+        <div class="orbit-node n1"><i></i> بخار → MSF</div>
+        <div class="orbit-node n2"><i></i> 1,036,000 م³/يوم</div>
+        <div class="orbit-node n3"><i></i> كهرباء → RO</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container" style="padding-top:40px;">
+  <div class="ev-legend" role="list" aria-label="دليل مصادر البيانات">
+    <span class="ev-legend-label">مصدر البيانات:</span>
+    <span class="ev-legend-item is-official" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> رسمي</span>
+    <span class="ev-legend-item is-peer-reviewed" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محكّم علمياً</span>
+    <span class="ev-legend-item is-calculated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> محسوب</span>
+    <span class="ev-legend-item is-estimated" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> تقديري هندسي</span>
+    <span class="ev-legend-item is-user-input" role="listitem"><i class="ev-legend-dot" aria-hidden="true"></i> إدخال المستخدم</span>
+  </div>
+</div>
+
+<!-- ============ TWO PARALLEL PATHS ============ -->
+<section class="section" id="paths" aria-labelledby="paths-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Dual-Path Architecture</span>
+      <h2 id="paths-heading">مساران من مصدر واحد، يعملان في آنٍ واحد</h2>
+      <p>
+        كل وحدة SMART100 (100 ميغاواط كهربائي / 330 ميغاواط حراري) تُنتج قدرة حرارية تتوزع
+        بين مسار مباشر إلى وحدات التقطير، ومسار يمرّ عبر التوربين/المولّد لإنتاج الكهرباء.
+        المخطط التالي يوضّح كيف ينقسم هذا الناتج ثم يجتمع من جديد في صورة مياه محلاة.
+      </p>
+    </div>
+
+    <div class="dp-legend" role="list" aria-label="دليل ألوان المخطط">
+      <span class="dp-legend-item" role="listitem"><i class="dp-legend-dot thermal" aria-hidden="true"></i> المسار الحراري (بخار)</span>
+      <span class="dp-legend-item" role="listitem"><i class="dp-legend-dot electric" aria-hidden="true"></i> المسار الكهربائي (توربين/مولّد)</span>
+      <span class="dp-legend-item" role="listitem"><i class="dp-legend-dot water" aria-hidden="true"></i> الناتج النهائي (مياه محلاة)</span>
+    </div>
+
+    <div class="dual-path reveal">
+      <div class="dp-source">
+        <span class="dp-source-tag">المصدر · 10 وحدات</span>
+        <strong>SMART100 <span class="ff-mono">(Integral PWR)</span></strong>
+        <div class="dp-source-figures">
+          <span>100 MWe / وحدة</span>
+          <span>330 MWth / وحدة</span>
+        </div>
+      </div>
+
+      <div class="dp-trunk" aria-hidden="true"></div>
+
+      <div class="dp-branches">
+        <div class="dp-branch dp-thermal">
+          <div class="dp-branch-head">
+            <span class="dp-branch-icon" aria-hidden="true">♨️</span>
+            <h3>المسار الحراري</h3>
+            <p>بخار مُستخرَج مباشرة من المفاعلات إلى وحدات التقطير الحراري</p>
+          </div>
+          <div class="dp-node">8 وحدات <strong>MSF</strong></div>
+          <div class="dp-node dp-metric">62.7 <span>kWh(th)/م³</span> <small>(عبر GOR ≈ 10)</small></div>
+          <div class="dp-node dp-output">70.2% <span>من إجمالي إنتاج المحطة</span></div>
+        </div>
+
+        <div class="dp-branch dp-electric">
+          <div class="dp-branch-head">
+            <span class="dp-branch-icon" aria-hidden="true">⚡</span>
+            <h3>المسار الكهربائي</h3>
+            <p>بخار يُشغّل التوربين/المولّد لإنتاج كهرباء تُغذّي مضخات الضغط العالي</p>
+          </div>
+          <div class="dp-node">17 وحدة <strong>RO</strong></div>
+          <div class="dp-node dp-metric">4.0 <span>kWh(e)/م³</span> <small>(مضخات الضغط العالي)</small></div>
+          <div class="dp-node dp-output">29.8% <span>من إجمالي إنتاج المحطة</span></div>
+        </div>
+      </div>
+
+      <div class="dp-merge" aria-hidden="true">
+        <div class="dp-merge-line l"></div>
+        <div class="dp-merge-line r"></div>
+      </div>
+
+      <div class="dp-total">
+        <span class="dp-source-tag">الناتج المجمّع</span>
+        <strong>1,036,000 م³/يوم</strong>
+        <span class="dp-total-sub">إجمالي إنتاج محطة رأس الخير من المياه المحلاة</span>
+      </div>
+    </div>
+
+    <p class="model-note">
+      🔎 المخطط يعكس البنية التصميمية للمفاعل والمحطة كما وردت في هذا المشروع؛ نسب التوزيع
+      (70.2% / 29.8%) ومعدلات الاستهلاك النوعي (62.7 و4.0 كيلوواط.ساعة/م³) هي أرقام محطة رأس
+      الخير القائمة فعلياً، وليست نتائج محاكاة.
+    </p>
+  </div>
+</section>
+
+<!-- ============ DIGITAL TWIN-INSPIRED 3D VISUALIZATION ============ -->
+<section class="section section-alt dt-section" id="digital-twin" aria-labelledby="dt-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Digital Twin-Inspired Simulation</span>
+      <h2 id="dt-heading">من المفاعل إلى الماء العذب — نموذج تفاعلي</h2>
+      <p>
+        تصوّر ثلاثي الأبعاد تفاعلي مبني على بنية نموذج هذا المشروع، يوضّح رحلة الطاقة من عشر
+        وحدات SMART100 إلى محطة رأس الخير ثم إلى المياه العذبة. <strong style="color:var(--text-1)">هذا
+        تصوّر محاكاة ثلاثي الأبعاد وليس توأماً رقمياً (Digital Twin) صناعياً حقيقياً</strong> —
+        لا يتصل بأي مستشعرات أو بيانات تشغيل فعلية من أي محطة حقيقية.
+      </p>
+    </div>
+
+    <div class="dt-stage-wrap reveal">
+      <div class="dt-canvas-wrap" id="dt-canvas-wrap">
+        <div class="dt-spinner" id="dt-spinner" aria-hidden="true"><span></span></div>
+        <div class="dt-fallback" id="dt-fallback" hidden>
+          <p>
+            تعذّر تحميل مكتبة العرض ثلاثي الأبعاد (Three.js) من الشبكة، لذلك تعذّر عرض النموذج
+            التفاعلي هنا. هذا القسم توضيحي اختياري ولا يؤثر على بقية محتوى الصفحة.
+          </p>
+        </div>
+        <canvas id="dt-canvas" aria-label="نموذج تفاعلي ثلاثي الأبعاد لتدفق الطاقة من المفاعلات إلى المحطة والمياه"></canvas>
+      </div>
+
+      <div class="dt-toolbar">
+        <button type="button" class="dt-btn" id="dt-toggle-rotate" aria-pressed="true">⏸ إيقاف الدوران التلقائي</button>
+        <button type="button" class="dt-btn" id="dt-reset-view">↺ إعادة ضبط العرض</button>
+      </div>
+
+      <div class="dt-legend" role="list" aria-label="دليل ألوان النموذج ثلاثي الأبعاد">
+        <span class="dt-legend-item" role="listitem"><i class="dt-legend-dot dt-dot-nuclear" aria-hidden="true"></i> المفاعلات (10× SMART100)</span>
+        <span class="dt-legend-item" role="listitem"><i class="dt-legend-dot dt-dot-thermal" aria-hidden="true"></i> المسار الحراري → MSF</span>
+        <span class="dt-legend-item" role="listitem"><i class="dt-legend-dot dt-dot-electric" aria-hidden="true"></i> المسار الكهربائي → RO</span>
+        <span class="dt-legend-item" role="listitem"><i class="dt-legend-dot dt-dot-water" aria-hidden="true"></i> المياه العذبة الناتجة</span>
+      </div>
+    </div>
+
+    <p class="model-note center">
+      🔎 هذا تصوّر بصري (visualization) ثلاثي الأبعاد مبني على بنية هذا المشروع لأغراض الشرح
+      والتوضيح فقط. إنه ليس توأماً رقمياً صناعياً فعلياً، ولا يتصل بأي بيانات تشغيل حيّة أو
+      مستشعرات من محطة رأس الخير الحقيقية.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SCENARIO COMPARISON TABS ============ -->
+<section class="section section-alt" id="scenarios" aria-labelledby="scenarios-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Three Ways To Allocate The Same Reactor Output</span>
+      <h2 id="scenarios-heading">ماذا لو وُجِّه الناتج بطريقة مختلفة؟</h2>
+      <p>
+        نظرياً هناك ثلاث طرق ممكنة لتوزيع ناتج المفاعل بين MSF وRO. هذا المشروع يحاكي واحدة
+        منها فقط — الهجينة — لأنها تطابق البنية الفعلية لمحطة رأس الخير. التبويبات التالية
+        تقارن الثلاث جميعاً.
+      </p>
+    </div>
+
+    <div class="scenarios-tabs">
+      <div class="tablist" role="tablist" aria-label="سيناريوهات توزيع ناتج المفاعل">
+        <button type="button" role="tab" id="tab-a" aria-selected="false" aria-controls="panel-a" tabindex="-1" class="tab">
+          <span class="tab-index">A</span><span>المسار الحراري فقط</span>
+        </button>
+        <button type="button" role="tab" id="tab-b" aria-selected="false" aria-controls="panel-b" tabindex="-1" class="tab">
+          <span class="tab-index">B</span><span>المسار الكهربائي فقط</span>
+        </button>
+        <button type="button" role="tab" id="tab-c" aria-selected="true" aria-controls="panel-c" tabindex="0" class="tab is-active">
+          <span class="tab-index">C</span><span>المسار الهجين</span><span class="tab-badge">ما يحاكيه النموذج</span>
+        </button>
+      </div>
+
+      <div class="tabpanels">
+        <div role="tabpanel" id="panel-a" aria-labelledby="tab-a" class="tabpanel" tabindex="0" hidden>
+          <span class="scenario-flag flag-theory">⚠ سيناريو نظري للمقارنة — غير مُحاكى في هذا المشروع</span>
+          <h3>A · كل البخار إلى MSF، ولا شيء إلى RO</h3>
+          <p>
+            في هذا الافتراض، يُوجَّه كامل البخار الناتج عن المفاعلات مباشرة إلى وحدات MSF
+            الثماني، دون تحويل أي جزء منه إلى كهرباء. عملياً هذا يعني تعطيل الإنتاج عبر
+            التناضح العكسي بالكامل — وهو ما يخالف واقع محطة رأس الخير التي تعتمد على
+            17 وحدة RO لإنتاج ما يقارب 29.8% من مياهها. لهذا السبب لم يُدرَج هذا السيناريو
+            ضمن الحالات الأربع التي اختبرها نموذج هذا المشروع.
+          </p>
+        </div>
+
+        <div role="tabpanel" id="panel-b" aria-labelledby="tab-b" class="tabpanel" tabindex="0" hidden>
+          <span class="scenario-flag flag-theory">⚠ سيناريو نظري للمقارنة — غير مُحاكى في هذا المشروع</span>
+          <h3>B · كل البخار يتحول إلى كهرباء، ولا شيء إلى MSF</h3>
+          <p>
+            هنا يُحوَّل كامل الناتج الحراري للمفاعلات إلى كهرباء عبر التوربين/المولّد، لتشغيل
+            مضخات RO فقط، دون تزويد MSF بأي بخار مباشر. هذا الخيار ممكن هندسياً، لكنه يتجاهل
+            الميزة الأساسية للتكامل الحراري المباشر مع MSF، ويستلزم الاستغناء الكامل عن مسار
+            التقطير الحراري القائم فعلياً في ثماني وحدات بالمحطة. كسابقه، لم يُختبر هذا
+            السيناريو في نموذج هذا المشروع لأنه لا يعكس البنية الهجينة الحقيقية للمحطة.
+          </p>
+        </div>
+
+        <div role="tabpanel" id="panel-c" aria-labelledby="tab-c" class="tabpanel">
+          <span class="scenario-flag flag-actual">✓ هذا ما يحاكيه نموذج هذا المشروع فعلياً</span>
+          <h3>C · مسار حراري ومسار كهربائي معاً — الهجين</h3>
+          <p>
+            في هذا السيناريو، الذي يطابق البنية الفعلية لمحطة رأس الخير، يعمل المساران في
+            آنٍ واحد: بخار مباشر إلى MSF، وكهرباء إلى مضخات RO، بنفس نسب الإنتاج القائمة
+            (70.2% / 29.8%). هذا هو السيناريو الوحيد من بين الثلاثة الذي بُني عليه نموذج
+            المحاكاة الاقتصادية لهذا المشروع.
+          </p>
+          <div class="scenario-cost">
+            <span class="scenario-cost-num">5.588$</span>
+            <span class="scenario-cost-label">متوسط تكلفة إنتاج المياه المحلاة (LCOW) السنوي — وفق نموذج هذا المشروع</span>
+          </div>
+          <p class="scenario-cost-range-intro">
+            وعند اختبار النموذج على أربعة سيناريوهات طلب ثابتة مختلفة، تراوحت LCOW بين:
+          </p>
+          <ul class="scenario-cost-breakdown">
+            <li>
+              <span class="scb-tag scb-low">الأرخص · 5.40$/م³</span>
+              سيناريو ارتفاع الطلب على المياه — تتوزع التكلفة الرأسمالية على إنتاج أكبر
+            </li>
+            <li>
+              <span class="scb-tag scb-high">الأعلى · 5.82$/م³</span>
+              سيناريو ارتفاع الطلب على الكهرباء فقط — ترتفع التكلفة التشغيلية دون زيادة مقابلة في إنتاج المياه
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RELIABILITY / MAINTENANCE ============ -->
+<section class="section" id="reliability" aria-labelledby="reliability-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Reliability Under Maintenance</span>
+      <h2 id="reliability-heading">ماذا يحدث حين تخرج وحدة واحدة للصيانة الدورية؟</h2>
+      <p>
+        كل وحدة SMART100 تحتاج للتوقف للتزوّد بالوقود وأعمال الصيانة الدورية مرة كل نحو
+        3 سنوات تقريباً — حدث متكرر وواقعي وليس استثناءً. السؤال المهم: هل تكفي الوحدات
+        التسع المتبقية؟
+      </p>
+    </div>
+
+    <div class="reliability-panel reveal">
+      <div class="reliability-toggle-wrap">
+        <span class="reliability-toggle-label" id="units-toggle-label">عدد الوحدات العاملة الآن:</span>
+        <div class="reliability-toggle" role="radiogroup" aria-labelledby="units-toggle-label">
+          <button type="button" role="radio" aria-checked="true" class="toggle-radio is-active" data-units="10" tabindex="0">
+            10 وحدات <small>تشغيل كامل</small>
+          </button>
+          <button type="button" role="radio" aria-checked="false" class="toggle-radio" data-units="9" tabindex="-1">
+            9 وحدات <small>وحدة واحدة بالصيانة</small>
+          </button>
+        </div>
+      </div>
+
+      <ul class="scenario-status-list" id="scenario-status-list" aria-live="polite">
+        <li class="status-chip is-ok" data-scn="base">
+          <span class="status-icon" aria-hidden="true">✓</span>
+          <span>السيناريو الأساسي</span>
+        </li>
+        <li class="status-chip is-ok" data-scn="water">
+          <span class="status-icon" aria-hidden="true">✓</span>
+          <span>ارتفاع الطلب على المياه</span>
+        </li>
+        <li class="status-chip is-ok" data-scn="elec">
+          <span class="status-icon" aria-hidden="true">✓</span>
+          <span>ارتفاع الطلب على الكهرباء فقط</span>
+        </li>
+        <li class="status-chip is-ok" data-scn="peak">
+          <span class="status-icon" aria-hidden="true">✓</span>
+          <span>سيناريو الذروة القصوى</span>
+        </li>
+      </ul>
+
+      <p class="reliability-readout" id="reliability-readout" aria-live="polite">
+        بكامل الوحدات العشر، يُغطّى الطلب في جميع السيناريوهات الأربعة التي اختبرها النموذج.
+      </p>
+    </div>
+
+    <div class="reliability-insight">
+      <div class="ri-stat">
+        <span class="ri-num">80.5%</span>
+        <span class="ri-label">متوسط معامل استغلال المنظومة سنوياً، وفق نموذج هذا المشروع</span>
+      </div>
+      <div class="ri-copy">
+        <h3>الرؤية الدقيقة: التوقيت هو الحل، لا وحدة حادية عشرة</h3>
+        <p>
+          عند غياب وحدة واحدة للصيانة الدورية، تبقى الوحدات التسع المتبقية كافية لثلاثة من
+          أصل أربعة سيناريوهات طلب. السيناريو الوحيد الذي يتجاوز طاقة تسع وحدات هو سيناريو
+          <strong style="color:var(--text-1)">الذروة القصوى</strong>. لكن نموذج هذا المشروع
+          يُظهر أنّ جدولة الصيانة الدورية لكل وحدة خلال
+          <strong style="color:var(--text-1)">فصل الشتاء</strong> — وهو موسم انخفاض الطلب —
+          تحافظ على تغطية كاملة طوال العام، دون الحاجة لبناء وحدة حادية عشرة احتياطية.
+        </p>
+        <p class="model-note">
+          🔎 هذه نتيجة استنتجها نموذج هذا المشروع من محاكاة سنوية كاملة، وليست توصية تشغيلية
+          نهائية أو ممارسة معتمدة فعلياً في محطة رأس الخير.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVIRONMENTAL IMPACT / CARBON CALCULATOR ============ -->
+<section class="section section-alt impact-section" id="impact" aria-labelledby="impact-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Environmental Outcome — Interactive</span>
+      <h2 id="impact-heading">الأثر البيئي لهذا التكامل</h2>
+      <p>
+        عدّل القيم أدناه لترى كيف تتغير حسابات التوفير في الانبعاثات مباشرة. المعادلة الأساسية:
+        <span class="ff-mono">التوفير = انبعاثات خط الأساس (الغاز) − انبعاثات السيناريو النووي</span>.
+      </p>
+    </div>
+
+    <div class="cc-calculator reveal">
+      <div class="cc-grid">
+        <div class="cc-inputs">
+          <div class="cc-field">
+            <div class="cc-field-head">
+              <label class="cc-field-label" for="cc-water">إنتاج المياه اليومي</label>
+              <span class="cc-badge cc-badge-official" id="cc-badge-water">✓ Official</span>
+            </div>
+            <input type="number" id="cc-water" class="cc-number-input" value="1036000" min="0" step="1000" data-default="1036000">
+            <span class="cc-field-sub">م³/يوم — إجمالي إنتاج محطة رأس الخير الفعلي</span>
+          </div>
+
+          <div class="cc-field">
+            <div class="cc-field-head">
+              <label class="cc-field-label" for="cc-energy">الاستهلاك النوعي للطاقة (مُدمَج)</label>
+              <span class="cc-badge cc-badge-calculated" id="cc-badge-energy">🧮 Calculated</span>
+            </div>
+            <input type="number" id="cc-energy" class="cc-number-input" value="47.95" min="0" step="0.01" data-default="47.95">
+            <span class="cc-field-sub">كيلوواط.ساعة (مكافئ حراري)/م³ — 0.702×62.7 + 0.298×(4.0/0.303)</span>
+          </div>
+
+          <div class="cc-field">
+            <div class="cc-field-head">
+              <label class="cc-field-label" for="cc-grid">كثافة انبعاثات الشبكة (خط الأساس الغازي)</label>
+              <span class="cc-badge cc-badge-ipcc" id="cc-badge-grid">✓ IPCC AR5</span>
+            </div>
+            <div class="cc-slider-row">
+              <input type="range" id="cc-grid" class="cc-slider" min="300" max="900" step="1" value="490" data-default="490">
+              <span class="cc-slider-val" id="cc-grid-val">490 g/kWh</span>
+            </div>
+            <span class="cc-field-sub">IPCC AR5 WG3، الملحق III — الوسيط لدورة الحياة الكاملة للغاز الطبيعي (CCGT)</span>
+          </div>
+
+          <div class="cc-field">
+            <div class="cc-field-head">
+              <label class="cc-field-label" for="cc-nuclear">معامل انبعاثات دورة الحياة النووية</label>
+              <span class="cc-badge cc-badge-ipcc" id="cc-badge-nuclear">✓ IPCC AR5</span>
+            </div>
+            <div class="cc-slider-row">
+              <input type="range" id="cc-nuclear" class="cc-slider" min="0" max="50" step="1" value="12" data-default="12">
+              <span class="cc-slider-val" id="cc-nuclear-val">12 g/kWh</span>
+            </div>
+            <span class="cc-field-sub">IPCC AR5 WG3، الملحق III — الوسيط لدورة الحياة الكاملة للطاقة النووية</span>
+          </div>
+        </div>
+
+        <div class="cc-results">
+          <div class="cc-result-card">
+            <span class="cc-result-num" id="cc-avoided">—</span>
+            <span class="cc-result-label">مليون طن CO₂ يتم تجنبها سنوياً</span>
+          </div>
+          <div class="cc-result-card">
+            <span class="cc-result-num" id="cc-reduction">—</span>
+            <span class="cc-result-label">نسبة خفض الانبعاثات مقارنة بخط الأساس الغازي</span>
+          </div>
+
+          <div class="cc-bars" aria-hidden="false">
+            <div class="cc-bar-row">
+              <span class="cc-bar-label">خط الأساس (غاز)</span>
+              <span class="cc-bar-track"><span class="cc-bar-fill baseline" id="cc-bar-baseline"></span></span>
+              <span class="cc-bar-value" id="cc-bar-baseline-val">—</span>
+            </div>
+            <div class="cc-bar-row">
+              <span class="cc-bar-label">السيناريو النووي</span>
+              <span class="cc-bar-track"><span class="cc-bar-fill nuclear" id="cc-bar-nuclear"></span></span>
+              <span class="cc-bar-value" id="cc-bar-nuclear-val">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-honesty-note" id="cc-honesty-note">
+        <span aria-hidden="true">⚠️</span>
+        <span>
+          بالقيم الافتراضية، تُظهر هذه الحاسبة نحو <strong style="color:var(--text-1)">8.6–8.9 مليون طن
+          / ~97%</strong> — وهو رقم مختلف قليلاً عن رقم "8.27 مليون طن / 96.7%" الظاهر في أماكن أخرى
+          من هذا الموقع (كالصفحة الرئيسية، وإحصائيات هذه الصفحة نفسها). هذا الفارق متوقّع: هذه
+          الحاسبة تستخدم طريقة تصاعدية مبسّطة (الإنتاج × الاستهلاك النوعي المدمج)، بينما الرقم
+          الرئيسي في الموقع مبني على نموذج محاكاة تفصيلي لعام كامل. لا نحاول هنا مطابقة الرقمين،
+          بل عرض الفارق بصراحة.
+        </span>
+        <button type="button" class="cc-honesty-dismiss" id="cc-honesty-dismiss" aria-label="إغلاق هذه الملاحظة">✕</button>
+      </div>
+    </div>
+
+    <p class="model-note center">
+      🔎 هذه حاسبة تفاعلية توضيحية لفهم أثر تغيير الافتراضات (الإنتاج، الاستهلاك النوعي، وكثافة
+      الانبعاثات) على نتيجة التوفير في الانبعاثات، وليست بديلاً عن نموذج المحاكاة الاقتصادي/البيئي
+      الكامل لهذا المشروع.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section" id="cta">
+  <div class="container">
+    <div class="cta-band">
+      <span class="eyebrow">Keep Exploring</span>
+      <h2>أردت الأرقام الكاملة أم تفاصيل المفاعل نفسه؟</h2>
+      <p>
+        صفحة الأداء تعرض كل نتائج المحاكاة والتحليل الاقتصادي بالتفصيل، وصفحة المفاعل تشرح
+        تصميم SMART100 الهندسي الذي يجعل هذا التكامل ممكناً من الأساس.
+      </p>
+      <div class="hero-ctas">
+        <a href="performance.html" class="btn btn-primary">صفحة الأداء والأرقام <span class="btn-arrow">←</span></a>
+        <a href="reactor.html" class="btn btn-secondary">تفاصيل مفاعل SMART100 <span class="btn-arrow">←</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>الصفحات الرئيسية</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="reactor.html">المفاعل</a></li>
+          <li><a href="plant.html">المحطة</a></li>
+          <li><a href="integration.html" aria-current="page">التكامل</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>التقنيات</h4>
+        <ul>
+          <li><a href="msf.html">MSF</a></li>
+          <li><a href="ro.html">RO</a></li>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>التحليل والمرجعية</h4>
+        <ul>
+          <li><a href="performance.html">الأداء</a></li>
+          <li><a href="safety.html">السلامة</a></li>
+          <li><a href="glossary.html">المصطلحات</a></li>
+          <li><a href="references.html">المراجع</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/integration.js"></script>
+<script src="js/carbon-calculator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/digital-twin.js"></script>
+</body>
+</html>

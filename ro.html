@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RO — التناضح العكسي | SMART100 × رأس الخير</title>
+<meta name="description" content="شرح تفصيلي لتقنية RO: مبدأ الأغشية شبه المنفذة، التناضح العكسي مقابل الطبيعي، الاستهلاك الكهربائي النوعي، ودور الكهرباء القادمة من توربينات مفاعل SMART100.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/evidence-badges.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">تجاوز إلى المحتوى الرئيسي</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="التنقل الرئيسي">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SMART100 <span class="x">×</span> رأس الخير</span>
+    </a>
+    <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">لوحة التحكم</a></li>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="reactor.html">المفاعل</a></li>
+      <li><a href="acp100-benchmark.html">ACP100 (مرجع عالمي)</a></li>
+      <li><a href="plant.html">المحطة</a></li>
+      <li><a href="msf.html">MSF</a></li>
+      <li><a href="ro.html" aria-current="page">RO</a></li>
+      <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+      <li><a href="integration.html">التكامل</a></li>
+      <li><a href="performance.html">الأداء</a></li>
+      <li><a href="safety.html">الأمان</a></li>
+      <li><a href="glossary.html">المصطلحات</a></li>
+      <li><a href="references.html">المراجع</a></li>
+    </ul>
+    <a href="index.html#cta" class="nav-cta">استكشف المشروع</a>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="مسار التصفح">
+      <a href="index.html">الرئيسية</a><span class="sep" aria-hidden="true">/</span>
+      <a href="plant.html">المحطة</a><span class="sep" aria-hidden="true">/</span>
+      <span aria-current="page">RO</span>
+    </nav>
+    <span class="eyebrow">Reverse Osmosis</span>
+    <h1>RO — التناضح العكسي</h1>
+    <p class="lead">
+      التقنية الغشائية الأحدث في محطة رأس الخير، وهي المسؤولة عن
+      <strong style="color:var(--text-1)"> 29.8%</strong> من إنتاج المحطة عبر
+      <strong style="color:var(--text-1)"> 17 وحدة</strong>. لا تحتاج بخاراً حرارياً على
+      الإطلاق، بل كهرباء فقط لتشغيل مضخات الضغط العالي — وهي بالضبط ما يمكن لتوربينات
+      مفاعل SMART100 توليده.
+    </p>
+    <div class="page-hero-stats" role="list" aria-label="مؤشرات أداء RO">
+      <div class="mini-stat" role="listitem"><b>4.0 kWh(e)/m³</b><span>الاستهلاك الكهربائي النوعي</span></div>
+      <div class="mini-stat" role="listitem"><b>29.8%</b><span>من إنتاج محطة رأس الخير</span></div>
+      <div class="mini-stat" role="listitem"><b>17 وحدة</b><span>تعمل ضمن المنظومة الهجينة</span></div>
+      <div class="mini-stat" role="listitem"><b>0 بخار</b><span>لا تحتاج طاقة حرارية للتشغيل</span></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ PRINCIPLE ============ -->
+  <section class="section" aria-labelledby="principle-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Physical Principle</span>
+        <h2 id="principle-h">من التناضح الطبيعي إلى التناضح العكسي</h2>
+        <p>بدّل بين الحالتين لترى كيف يقلب الضغط العالي اتجاه حركة الماء الطبيعية.</p>
+      </div>
+      <p>
+        في الطبيعة، عندما يفصل غشاء شبه منفذ (Semi-permeable Membrane) محلولين مختلفي
+        التركيز — مثل مياه عذبة ومياه بحر مالحة — تتحرك جزيئات الماء تلقائياً من الجانب
+        الأقل ملوحة إلى الجانب الأكثر ملوحة، في ظاهرة تُعرف بـ
+        <strong style="color:var(--text-1)"> التناضح الطبيعي (Osmosis)</strong>، سعياً لموازنة
+        التركيز. لعكس هذا الاتجاه واستخلاص ماء عذب من مياه البحر، تُطبَّق
+        <strong style="color:var(--text-1)"> مضخات ضغط عالٍ</strong> على جانب المياه المالحة
+        بقوة تتجاوز "الضغط الأسموزي" الطبيعي، فتُجبر جزيئات الماء على العبور عكسياً خلال
+        الغشاء نحو الجانب العذب، بينما يُحجز الغشاء الأملاح والشوائب الذائبة تقريباً بالكامل
+        — وهذا هو مبدأ <strong style="color:var(--text-1)">التناضح العكسي (Reverse Osmosis)</strong>.
+      </p>
+
+      <div class="osmosis-toggle" role="group" aria-label="اختر نمط العرض">
+        <button type="button" aria-pressed="false" data-mode="natural">التناضح الطبيعي</button>
+        <button type="button" aria-pressed="true" data-mode="reverse">التناضح العكسي (RO)</button>
+      </div>
+
+      <div class="osmosis-diagram" data-mode="reverse" aria-live="polite">
+        <div class="membrane-row">
+          <div class="osmosis-side saline" id="osmosis-side-a">مياه بحر مالحة<br><small>+ ضغط عالٍ من مضخة RO</small></div>
+          <div class="membrane-wall" aria-hidden="true"></div>
+          <div class="osmosis-side fresh" id="osmosis-side-b">ماء عذب (منتج)</div>
+        </div>
+        <div class="osmosis-arrow" aria-hidden="true">⇄</div>
+        <p id="osmosis-caption" style="margin:0; text-align:center; max-width:520px;">
+          مع تطبيق ضغط عالٍ من مضخة RO يفوق الضغط الأسموزي، ينعكس اتجاه حركة الماء: يعبر
+          الماء العذب الغشاء من الجانب المالح نحو الجانب المنتج، بينما تُحجز الأملاح خلف
+          الغشاء وتُصرَّف كمياه تركيز (Brine).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3D INTERACTIVE MODEL ============ -->
+  <section class="section" id="ro-3d" aria-labelledby="r3d2-heading">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Interactive 3D</span>
+        <h2 id="r3d2-heading">النموذج التفاعلي ثلاثي الأبعاد لمنظومة RO</h2>
+        <p>
+          نموذج ثلاثي الأبعاد مبسّط وتوضيحي (وليس مخططاً هندسياً معتمداً) لخط تحلية بالتناضح
+          العكسي بمرحلة واحدة. استخدم الفأرة لتدوير النموذج وتكبيره أو تصغيره، واضغط على أي
+          مكون بداخله — أو اختره من القائمة الجانبية — للتعرّف عليه، وشغّل حركة الدورة لمشاهدة
+          انفصال الماء المنتج (Permeate) عن مياه التركيز المرفوضة (Concentrate).
+        </p>
+      </div>
+
+      <div class="r3d2-wrap">
+        <div class="r3d2-stage">
+          <div class="r3d2-canvas-container" id="r3d2-container">
+            <canvas id="r3d2-canvas" aria-label="نموذج ثلاثي الأبعاد تفاعلي لمنظومة التناضح العكسي RO"></canvas>
+            <div class="r3d2-loading" id="r3d2-loading">
+              <span class="r3d2-spinner" aria-hidden="true"></span>
+              <span>جارِ تحميل النموذج ثلاثي الأبعاد...</span>
+            </div>
+            <div class="r3d2-fallback" id="r3d2-fallback" hidden>
+              <p>
+                تعذّر تحميل محرّك العرض ثلاثي الأبعاد (Three.js) في هذا المتصفح أو الاتصال.
+                يمكنك الاطلاع على شرح مبدأ التناضح العكسي في
+                <a href="#principle-h">قسم المبدأ الفيزيائي أعلاه</a>، أو في القائمة المقابلة.
+              </p>
+            </div>
+          </div>
+          <div class="r3d2-toolbar">
+            <button type="button" class="r3d2-btn" id="r3d2-toggle-flow" aria-pressed="true">⏸ حركة الدورة</button>
+            <button type="button" class="r3d2-btn" id="r3d2-toggle-rotate" aria-pressed="false">🔄 دوران تلقائي</button>
+            <button type="button" class="r3d2-btn" id="r3d2-reset-view">↺ إعادة ضبط العرض</button>
+          </div>
+          <p class="r3d2-hint">اسحب للتدوير • عجلة الفأرة للتكبير/التصغير • انقر على أي جزء للتفاصيل</p>
+        </div>
+
+        <div class="r3d2-panel">
+          <span class="eyebrow">Component</span>
+          <h3 id="r3d2-title">اختر مكوناً</h3>
+          <p id="r3d2-desc" aria-live="polite">اضغط على أي جزء من النموذج ثلاثي الأبعاد، أو اختر مكوناً من القائمة أدناه لعرض شرح عنه.</p>
+          <ul class="r3d2-list" id="r3d2-list" role="list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ELECTRICITY INPUT FROM SMART100 ============ -->
+  <section class="section section-alt" aria-labelledby="power-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Electric Coupling</span>
+        <h2 id="power-h">دور الكهرباء القادمة من توربينات SMART100</h2>
+        <p>اقتران كهربائي غير مباشر، عبر الشبكة الداخلية للمحطة.</p>
+      </div>
+      <p>
+        على عكس MSF التي تحتاج بخاراً مباشراً، لا تحتاج وحدات RO السبع عشرة إلا
+        <strong style="color:var(--text-1)"> كهرباء</strong> لتشغيل مضخات الضغط العالي التي
+        تدفع مياه البحر عبر أغشيتها. في التصميم الحالي، تأتي هذه الكهرباء من محطات توليد تعمل
+        بالغاز الطبيعي. أما في التصميم المقترح، فتولّد توربينات البخار المرتبطة بمفاعلات
+        SMART100 (بقدرة كهربائية 100 MWe لكل وحدة من أصل عشر وحدات) هذه الكهرباء، ثم تُنقل عبر
+        الشبكة الداخلية للمحطة إلى مضخات RO تماماً كما تُغذّى اليوم من الشبكة التقليدية —
+        دون أي تعديل على تصميم وحدات RO نفسها.
+      </p>
+      <p>
+        هذا النمط من الاقتران يمنح مرونة تشغيلية: يمكن لمضخات RO أن تعمل أو تتوقف بسرعة أكبر
+        نسبياً من دائرة MSF الحرارية، ما يجعلها عنصراً مناسباً لموازنة الحمل الكهربائي الداخلي
+        للمحطة عند الحاجة.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PERFORMANCE METRICS ============ -->
+  <section class="section" aria-labelledby="perf-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Performance Metrics</span>
+        <h2 id="perf-h">الاستهلاك الكهربائي النوعي</h2>
+        <p>المقياس الأساسي لتقييم كفاءة طاقة أي وحدة RO.</p>
+      </div>
+      <div class="stats-grid" style="position:static; margin:0; grid-template-columns:repeat(2,1fr);">
+        <div class="stat-card in-view">
+          <span class="stat-num" style="color:var(--water)">4.0 kWh(e)/m³</span>
+          <span class="stat-label">الاستهلاك النوعي للطاقة الكهربائية لإنتاج كل متر مكعب من الماء المنتج في نموذج هذا المشروع</span>
+        </div>
+        <div class="stat-card in-view">
+          <span class="stat-num" style="color:var(--water)">29.8%</span>
+          <span class="stat-label">حصة وحدات RO السبع عشرة من إجمالي إنتاج محطة رأس الخير (1,036,000 م³/يوم)</span>
+        </div>
+      </div>
+      <p style="margin-top:28px;">
+        القيمة المعتمدة في نموذج هذا المشروع (4.0 kWh(e)/m³) تشمل استهلاك مضخات الضغط العالي
+        والمعدات المساعدة المرتبطة بدورة RO، وتُقارَن مباشرة بالاستهلاك الحراري النوعي لتقنية
+        MSF (62.7 kWh(th)/m³) في صفحة المقارنة، مع ملاحظة أن نوع الطاقة مختلف جوهرياً
+        (كهرباء مقابل حرارة).
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROS & CONS ============ -->
+  <section class="section section-alt" aria-labelledby="proscons-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trade-offs</span>
+        <h2 id="proscons-h">مزايا وعيوب تقنية RO</h2>
+        <p>موازنة صريحة بين كفاءة الطاقة وحساسية التشغيل.</p>
+      </div>
+      <div class="pros-cons">
+        <div class="pc-col pros">
+          <h3>✅ المزايا</h3>
+          <ul>
+            <li><i aria-hidden="true">•</i> استهلاك طاقة إجمالي أقل لكل متر مكعب مقارنة بالتقنيات الحرارية بشكل عام</li>
+            <li><i aria-hidden="true">•</i> بصمة تشغيلية (Footprint) أصغر نسبياً مقارنة بمنظومات التقطير متعددة المراحل</li>
+            <li><i aria-hidden="true">•</i> مرونة أعلى في التشغيل: بدء وإيقاف أسرع نسبياً من الدورات الحرارية</li>
+          </ul>
+        </div>
+        <div class="pc-col cons">
+          <h3>⚠️ العيوب</h3>
+          <ul>
+            <li><i aria-hidden="true">•</i> حساسية أعلى لجودة مياه التغذية، ما يستدعي معالجة أولية دقيقة قبل الأغشية</li>
+            <li><i aria-hidden="true">•</i> انسداد وتلوث الأغشية (Membrane Fouling) يستوجب تنظيفاً كيميائياً دورياً واستبدالاً منتظماً</li>
+            <li><i aria-hidden="true">•</i> اعتماد كبير على استقرار مصدر الكهرباء وجودة الشبكة أو مصدر التوليد</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT ============ -->
+  <section class="section" aria-labelledby="next-h">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Continue Reading</span>
+        <h2 id="next-h">قارن الآن مع تقنية MSF</h2>
+        <p>بعد فهم RO، تعرّف على التقنية الحرارية المقابلة، أو انتقل مباشرة إلى المقارنة الجانبية.</p>
+      </div>
+      <div class="cards-3">
+        <a href="msf.html" class="card tone-msf reveal" style="display:block;">
+          <span class="card-tag">Compare</span>
+          <div class="card-icon">🔥</div>
+          <h3>MSF — التقطير الومضي متعدد المراحل</h3>
+          <p>مبدأ الفلاش الحراري، ومعامل الأداء GOR.</p>
+        </a>
+        <a href="tech-comparison.html" class="card tone-why reveal" style="display:block;">
+          <span class="card-tag">Compare</span>
+          <div class="card-icon">📊</div>
+          <h3>مقارنة التقنيات</h3>
+          <p>جدول تفاعلي جنباً إلى جنب بين MSF وRO، وخلاصة عن الحل الهجين.</p>
+        </a>
+        <a href="plant.html" class="card tone-plant reveal" style="display:block;">
+          <span class="card-tag">Back</span>
+          <div class="card-icon">🏭</div>
+          <h3>محطة رأس الخير</h3>
+          <p>عد إلى نظرة عامة على المحطة وبنيتها الهجينة الكاملة.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>SMART100 <span class="x">×</span> رأس الخير</span>
+        </a>
+        <p>
+          منصة هندسية بحثية تستعرض إمكانية تكامل المفاعلات النووية المعيارية الصغيرة
+          (SMR) من طراز SMART100 مع محطة رأس الخير لتحلية المياه، كبديل عن الغاز
+          الطبيعي في توفير الحرارة والكهرباء اللازمتين لعمليات التحلية.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>الصفحات الرئيسية</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="reactor.html">مفاعل SMART100</a></li>
+          <li><a href="plant.html">محطة رأس الخير</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تقنيات التحلية</h4>
+        <ul>
+          <li><a href="msf.html">MSF — التقطير الومضي</a></li>
+          <li><a href="ro.html">RO — التناضح العكسي</a></li>
+          <li><a href="tech-comparison.html">مقارنة التقنيات</a></li>
+          <li><a href="integration.html">التكامل التقني</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>موارد ومعطيات</h4>
+        <ul>
+          <li><a href="performance.html">الأداء والمحاكاة</a></li>
+          <li><a href="safety.html">الأمان النووي</a></li>
+          <li><a href="glossary.html">مسرد المصطلحات</a></li>
+          <li><a href="references.html">المراجع والمصادر</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SMART100 × Ras Al-Khair Integration Study</span>
+      <span>Nuclear Desalination Research Platform</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/interactive.js"></script>
+<script src="js/ro-3d-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/ro-3d.js"></script>
+</body>
+</html>
